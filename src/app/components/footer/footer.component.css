@@ -1,0 +1,16 @@
+.copy{
+    width: 100%;
+    font-size: 15px; 
+    margin-top: 10px; 
+    padding-top: 40px; 
+    padding-bottom: 20px; 
+    background-color: rgb(187, 190, 192);  
+    /* position: absolute; */
+    bottom: 0px;
+    clear: both;
+    position: relative;
+}
+.copy a{color: #ff4081;}
+footer{
+    display: block;
+}

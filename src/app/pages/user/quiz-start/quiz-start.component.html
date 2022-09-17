@@ -1,0 +1,230 @@
+<!-- {{quesData|json}} -->
+<div *ngIf="quesData.length>0">
+  <div class="bootstrap-wrapper" *ngIf="!isSubmit" (contextmenu)="onRightClick()">
+    <div class="conatainer-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <mat-card style="margin-top:70px;">
+            <mat-card-header>
+              <mat-card-title>Instructiions</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <ul>
+                <li>Do not refresh the Page otherwise you will get new question in this quiz.</li>
+                <li>Do not switch the tab.</li>
+                <li>Do not minimize the window.</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-md-8">
+          <!-- Questions -->
+          <!-- <mat-card *ngIf="!next">
+                      <div class="questions">
+                        <ul class="list-group list-group-flush" *ngFor="let q of quesData ; index as i">
+                          <div *ngIf="qnsCount == i">
+                            <div>
+                              <h2 class="text-center">{{i+1}} of {{quesData.length}}</h2>
+                              <div>
+                                <li class="list-group-item"><label id="example-radio-group-label"> <b>
+                                  <p>Q.{{i+1}}) <span class="ml20" [innerHtml]="q.content"></span></p>
+                                    </b><br></label><span class="marks">Points = 2</span></li>
+                    
+                                <li class="list-group-item qns">a. <mat-radio-button [(ngModel)]="q.givenAnswer" [disabled]="option"
+                                    [ngClass]="{'highlight': selectedIndex == q.option1}" (change)="userans(i,q.option1)"
+                                    [name]="'opta'+i" class="example-radio-button">
+                                    <div class="opt">{{q.option1}}</div>
+                                  </mat-radio-button>
+                                </li>
+                    
+                                <li class="list-group-item qns">b. <mat-radio-button [(ngModel)]="q.givenAnswer" [disabled]="option"
+                                    [ngClass]="{'highlight': selectedIndex == q.option2}" (change)="userans(i,q.option2)"
+                                    [name]="'opta'+i" class="example-radio-button"> {{q.option2}} </mat-radio-button>
+                                </li>
+                                <li class="list-group-item qns">c. <mat-radio-button  [(ngModel)]="q.givenAnswer"[disabled]="option"
+                                    [ngClass]="{'highlight': selectedIndex ==q.option3}" (change)="userans(i,q.option3)"
+                                    [name]="'opta'+i" class="example-radio-button"> {{q.option3}} </mat-radio-button>
+                                </li>
+                                <li class="list-group-item qns">d. <mat-radio-button [(ngModel)]="q.givenAnswer" [disabled]="option"
+                                    [ngClass]="{'highlight': selectedIndex == q.option4}" (change)="userans(i,q.option4)"
+                                    [name]="'opta'+i" class="example-radio-button"> {{q.option4}} </mat-radio-button>
+                                </li>
+                              </div>                  
+                            </div>
+                          </div>
+                        </ul>
+                        <br>
+                      </div>
+                    </mat-card> -->
+          <!-- {{quesData[0].quiz.title|json}} -->
+          <div *ngIf="quesData" class="mt20 ml20">
+            <h1>On going quiz <strong>{{quesData[0].quiz.title}}</strong></h1>
+          </div>
+          <mat-card *ngFor="let q of quesData; let i = index" class="mt10">
+            <mat-card-content>
+              <p>Q.{{i+1}}) <span class="ml20" [innerHtml]="q.content"></span></p>
+              <mat-divider></mat-divider>
+              <div class="row mt20">
+                <div class="col-md-6">
+                  <input type="radio" id="{{q.option1}}+{{i}}" [value]="q.option1" [name]="'opt'+i"
+                    [(ngModel)]="q.givenAnswer" />
+                  <label for="{{q.option1}}+{{i}}">{{q.option1}}</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="radio" id="{{q.option2}}+{{i}}" [value]="q.option2" [name]="'opt'+i"
+                    [(ngModel)]="q.givenAnswer" />
+                  <label for="{{q.option2}}+{{i}}">{{q.option2}}</label>
+                </div>
+              </div>
+              <div class="row mt20">
+                <div class="col-md-6">
+                  <input type="radio" id="{{q.option3}}+{{i}}" [value]="q.option3" [name]="'opt'+i"
+                    [(ngModel)]="q.givenAnswer" />
+                  <label for="{{q.option3}}+{{i}}">{{q.option3}}</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="radio" id="{{q.option4}}+{{i}}" [value]="q.option4" [name]="'opt'+i"
+                    [(ngModel)]="q.givenAnswer" />
+                  <label for="{{q.option4}}+{{i}}">{{q.option4}}</label>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-paginator [length]="this.quesData.length" [pageSize]="1" [pageSizeOptions]="[1,5,10,25]"
+            (page)="OnPageChange($event)" aria-label="Select page">
+          </mat-paginator>
+          <div class="container text-center mt20">
+            <button mat-raised-button color="primary" (click)="submitQuiz()">Submit Quiz</button>
+          </div>
+          <!-- <div class="container text-center mt20 mb20">
+                      <ul class="btn">
+                          <li class="btn-left"> <button [hidden]="qnsCount==0" *ngIf="!next" class="" mat-raised-button color="secondary" (click)="prevQns()"
+                            >Previous</button></li>
+                          <li class="btn-left"><button *ngIf="!next" class="" mat-raised-button color="primary" (click)="nextQns()"
+                            [hidden]="qnsCount == arrayLength-1">Next</button></li>     
+                          <li class="btn-left"><button [hidden]="qnsCount != arrayLength-1" *ngIf="!next" class="" mat-raised-button color="primary" (click)="nextQns()"
+                              >Submit</button></li>     
+                        </ul>
+                  </div> -->
+        </div>
+        <div class="col-md-2">
+          <!-- Progress -->
+          <mat-card style="margin-top:70px;">
+            <mat-card-header>
+              <mat-card-title>Progress</mat-card-title>
+              <mat-card-subtitle>Quiz will automatically submitted when timer reaches <strong>0:0</strong>
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <h2 class="text-center">{{ getFormatedTime() }} </h2>
+              <mat-spinner mode="determinate" color="accent" [value]="(timer / (this.quesData.length * 2 * 60)) * 100">
+              </mat-spinner>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <!-- {{user|json}}<br>
+    {{quesData|json}} -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <mat-card style="margin-top:50px;">
+            <mat-card-header>
+              <mat-card-title>Quiz Result</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <table mat-table class="mat-elevation-z8">
+                <ng-container>
+                  <td>
+                    <h3>Name: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{user.firstname}} {{user.lastname}}</strong></h3>
+                  </td>
+                </ng-container>
+                <tr>
+                  <td>
+                    <h3>Email: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{user.email}}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Contact: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{user.contact}}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Quiz Title: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{quesData[0].quiz.title}}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Quiz Date: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{result.date | date:'MM-dd-yyyy, h:mm:ss a ' }}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Total Marks: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{eval.marksGot.toFixed(2) }}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Total Correct Answer: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{eval.correctAns}}</strong></h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3>Total Attempted Question: </h3>
+                  </td>
+                  <td>
+                    <h3><strong>{{eval.attempted}}</strong></h3>
+                  </td>
+                </tr>
+              </table>
+            </mat-card-content>
+            <mat-card-actions class="text-center">
+              <button mat-raised-button color="primary" (click)="printPage()">Print</button>
+              <button mat-raised-button color="accent" [routerLink]="'/user/0'">Home</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div *ngIf="quesData.length<=0" class="col-md-12">
+        <mat-card class="mt20">
+          <mat-card-header>
+            <mat-card-title>Not any questions available in this quiz.</mat-card-title>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

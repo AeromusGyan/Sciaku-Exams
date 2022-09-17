@@ -1,0 +1,44 @@
+
+<div class="bootstrap-wrapper">
+    <mat-card-title class="mt10 mr20 ml20">All Quizzes</mat-card-title>
+    <mat-card class="mt10 card" *ngFor="let quiz of quizzes" appMaterialElevation defaultElevation="variableHeight" raisedElevation="16">
+        <mat-card-header>
+            <div class="example-header-image" mat-card-avatar></div>
+            <mat-card-title>  
+                {{quiz.title}}
+            </mat-card-title>
+            <mat-card-subtitle>{{quiz.category.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{quiz.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="row">
+                <div class="col-md-1 w100">
+                    <button routerLink="/admin/questions/{{quiz.qid}}/{{quiz.title}}" mat-flat-button color="accent" class="mr20 ml20">Questions</button>
+                </div>
+                <div class="col-md-2">
+                    <button mat-stroked-button color="accent" class="ml20">Max Marks: {{quiz.maxMarks}}</button>
+                </div>
+                <div class="col-md-2">
+                    <button mat-stroked-button color="accent" class="ml20">Max Questions: {{quiz.noOfQuestions}}</button>
+                </div>
+                
+                <div class="col-md-2">
+                    <button mat-stroked-button color="accent" >Status:{{quiz.status}}</button>
+                </div>
+                
+                <div class="col-md-2">
+                    <button mat-flat-button color="accent" class="ml20" routerLink="/admin/quiz/{{quiz.qid}}">Update</button>
+                </div>
+                <div class="col-md-1 offset-md-2">
+                <button (click)="deleteQuiz(quiz.qid)" mat-fab color="warn" class="ml20"><mat-icon>delete</mat-icon></button>
+                </div>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-quiz" mat-flat-button color="accent">Add Quiz</button>
+    </div>
+</div>
+<!-- {{quizzes|json}} -->

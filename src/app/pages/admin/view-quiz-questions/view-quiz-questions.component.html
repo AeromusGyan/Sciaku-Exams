@@ -1,0 +1,46 @@
+
+<div class="bootstrap-wrapper">
+    <h1 class="mt10 mr20 ml20">Questions to <span style="color: grey; font-weight:bold;">{{qTitle}}</span></h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="containner text-center">
+                <button mat-raised-button color="accent" routerLink="/admin/add-question/{{qId}}/{{qTitle}}">Add Question</button>
+            </div>
+            <!-- {{questions|json}} -->
+            <mat-card class="mt20 card" *ngFor="let q of questions; index as i">
+                <mat-card-content>
+                    <p>
+                        <strong>Q {{i+1}})</strong> <span class="ml10" [innerHtml]="q.content"></span>
+                    </p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>1) </strong>{{q.option1}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>2) </strong>{{q.option2}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>3) </strong>{{q.option3}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>4) </strong>{{q.option4}}</p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="row">
+                            <div class="col-md-6 mt20">
+                                <p><strong>Correct Answer : </strong>{{q.answer}}</p>
+                            </div>
+                            <div class="col-md-3 mt20 offset-md-3">
+                                <button routerLink="/admin/update-question/{{q.quesId}}/{{qTitle}}" mat-raised-button color="accent">Update Question</button>
+                                <button (click)="deleteQuestion(q.quesId)" mat-fab color="warn" style="margin-left: 30px;"><mat-icon>delete</mat-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

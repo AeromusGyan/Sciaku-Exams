@@ -1,0 +1,6 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar-single-row {
+  padding: 40px 16px;  }
+.logo{cursor: pointer;}

@@ -1,0 +1,42 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div *ngIf="userResult.length>0" class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <mat-card-title>You have attempted the following quiz.</mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+                <mat-card class="mt20" *ngFor="let r of userResult">
+                    <mat-card-header>
+                        <mat-card-title>{{userResult[0].quiz.title}}</mat-card-title>
+                        <mat-card-subtitle><em>Attemted Date: {{r.date | date:'MM-dd-yyyy, h:mm:ss a ' }}</em></mat-card-subtitle>
+                        <mat-card-subtitle>{{userResult[0].quiz.description}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3>Marks got: <strong>{{r.marksGot}}</strong></h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Max Marks: <strong>{{userResult[0].quiz.maxMarks}}</strong></h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Correct Answer: <strong>{{r.correct_answer}}</strong></h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>Attempted Question: <strong>{{r.attempted}}</strong></h3>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div *ngIf="userResult.length<=0" class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <mat-card-title>You have not attempted any quiz.</mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

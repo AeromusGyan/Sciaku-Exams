@@ -1,0 +1,74 @@
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h1 class="text-left">Add New Question to <span style="color: grey; font-weight:bold;">{{qTitle}}</span></h1>
+        </mat-card-title>
+        <mat-card-subtitle>
+            Enter the detail of the new question
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-10  ">
+                    <form class="mt20" [formGroup]="questionForm" (ngSubmit)="addQuestion()">
+                        <div class="row">
+                        <div class="col-md-12">
+                            <ckeditor autofocus tagName="textarea" [editor]="Editor" data="<p>Write your question here !</p>" name="content"  formControlName="content" rows="5"></ckeditor>
+
+                            <!-- <mat-form-field class="w100" appearance="fill">
+                                <mat-label>Question Content</mat-label>
+
+                                <textarea  type="text"  placeholder="Enter here" rows="5"></textarea>
+                            </mat-form-field> -->
+                        </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Option 1</mat-label>
+                                    <input autofocus type="text" name="option1" matInput formControlName="option1" placeholder="Enter here">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Option 2</mat-label>
+                                    <input autofocus type="text" name="option2" matInput formControlName="option2" placeholder="Enter here">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Option 3</mat-label>
+                                    <input autofocus type="text" name="option3" matInput formControlName="option3" placeholder="Enter here">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Option 4</mat-label>
+                                    <input autofocus type="text" name="option4" matInput formControlName="option4" placeholder="Enter here">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12">
+                                <mat-form-field class="w100" >
+                                    <mat-label>Select Answer</mat-label>
+                                    <mat-select name="answer" formControlName="answer">
+                                        <mat-option *ngIf="questionForm.value.option1" [value]="questionForm.value.option1">{{questionForm.value.option1}}</mat-option>
+                                        <mat-option *ngIf="questionForm.value.option2" [value]="questionForm.value.option2">{{questionForm.value.option2}}</mat-option>
+                                        <mat-option *ngIf="questionForm.value.option3" [value]="questionForm.value.option3">{{questionForm.value.option3}}</mat-option>
+                                        <mat-option *ngIf="questionForm.value.option4" [value]="questionForm.value.option4">{{questionForm.value.option4}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Save</button>
+                        </div>
+                        <div formGroupName="quiz">
+                        <input [hidden]="true" autofocus type="text" name="qid" matInput formControlName="qid" [(ngModel)]="qId">
+                        </div>
+<!-- {{questionForm.value|json}} -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

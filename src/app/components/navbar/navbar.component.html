@@ -1,0 +1,26 @@
+<mat-toolbar color="accent">
+    <!-- <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </a> -->
+    <mat-card-header>
+        <a (click)="homePage()" ><img class="logo" src="./../../../assets/images/Sciaku.png" alt="Sciaku Logo" title="Sciaku Logo"></a>
+    </mat-card-header>
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedin" routerLink="/login" mat-button class="example-icon"
+        aria-label="Example icon-button with login icon">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+    </a>
+    <button  *ngIf="isLoggedin" mat-raised-button color="primary" class="example-icon">
+        {{this.login.getUser().username}} </button>
+    <a *ngIf="isLoggedin" (click)="logout()" mat-button class="example-icon"
+        aria-label="Example icon-button with login icon">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+    </a>
+    <a *ngIf="!isLoggedin" routerLink="/signup" mat-button class="example-icon"
+        aria-label="Example icon-button with app_registration icon">
+        <mat-icon>app_registration</mat-icon>
+        <span>Register</span>
+    </a>
+</mat-toolbar>

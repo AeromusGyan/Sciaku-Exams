@@ -1,0 +1,63 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt10">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="container text-center">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" height="100px" alt="profile">
+                    </div>
+                    <h1 class="text-center">Register here</h1>
+    <!-- {{memberForm.value|json}} -->
+                    <form [formGroup]="memberForm" (ngSubmit)="Submit()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input type="username" name="username" formControlName="username" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error>Username is required</mat-error>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" name="password" formControlName="password" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error>Password is required</mat-error>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Firstname</mat-label>
+                            <input type="firstname" name="firstname" formControlName="firstname" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error>Firstname is required</mat-error>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Lastname</mat-label>
+                            <input type="lastname" name="lastname" formControlName="lastname" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email Address</mat-label>
+                            <input type="email" name="email" formControlName="email" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error>Email is required</mat-error>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input type="phone" name="contact" formControlName="contact" matInput placeholder="Enter here">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error>Phone Number is required</mat-error>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <!--  [disabled]="!memberForm.valid" -->
+                            <button type="submit" mat-raised-button color="primary">Register</button>
+                            <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  .example-radio-button {
+    margin: 10px;
+  }
+  .mat-radio-button{
+    width: 1140px !important;
+  }
+  .qns:hover{
+    background-color: rgb(151, 151, 151);
+  }
+  
+/* .mat-radio-checked{
+  background-color: red;
+  color: #fff;
+} */
+.quizbtn{
+  margin:10px 550px;
+  border: solid 2px ;
+}
+@media(max-width:800px){
+  
+  .mat-radio-button{
+    width: 310px !important;
+  }
+  .quizbtn{
+    margin:10px 100px;
+  }
+}
+ul li{
+  list-style: none;
+}
+.highlight{ background-color: green }
+ul li.btn-left{float: left;margin: 10px;}
+.btn{margin-left: 40%;}
+
+ul li{list-style: initial;}
+
+table {
+  width: 100%;
+}

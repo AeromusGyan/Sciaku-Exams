@@ -1,0 +1,48 @@
+.text-center{text-align: center;}
+
+.full-width{ width: 100%;}
+
+.mt50{margin-top: 50px;}
+
+.mt20{margin-top: 20px;}
+
+.mt10{margin-top: 10px;}
+
+.mr20{margin-right: 20px;}
+
+.ml10{margin-left: 10px;}
+
+.ml20{margin-left: 20px;}
+
+.mb20{margin-bottom: 20px;}
+
+.w100{width: 100%;}
+
+.text-left{text-align: left;}
+
+.profile-image{max-height: 100px; max-width: 100px; border-radius: 50px; border: #ff4081 3px solid;}
+
+.table{width: 100%;  border-collapse: collapse;}
+
+.table tr td{padding: 10px 20px; border: #8a8889 .5px solid;}
+
+.card { transition: transform 0.2s ease; }
+
+.card:hover { transform: scale(1.013); }
+
+.card { box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18); border-radius: 0; border: 0; }
+
+.card { transition: transform 0.2s ease; box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18); border-radius: 10px; border: 0; margin-bottom: 1.5em; }
+
+.logo{ height: 90px; margin-top: 10px; }
+
+@media screen and (max-width: 992px) {
+    body {
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 600px) {
+    body {
+    }
+  }
