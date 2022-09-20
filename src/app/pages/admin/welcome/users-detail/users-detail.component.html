@@ -1,0 +1,22 @@
+
+<!-- {{allmember|json}} -->
+<mat-card class="mt20">
+    <table mat-table class="mat-elevation-z8 " width="100%">
+        <tr>
+            <td width="5%"><strong>#</strong></td>
+            <th width="15%"><strong>Name</strong></th>
+            <th width="15%"><strong>Email</strong></th>
+            <th width="15%"><strong>Contact</strong></th>
+            <th width="15%"><strong>Status</strong></th>
+            <th width="15%"><strong>Actioin</strong></th>
+        </tr>
+        <tr *ngFor="let u of allmember; index as i">
+            <td width="5%"><strong>{{i+1}}</strong></td>
+            <td width="15%">{{u.firstname}} {{u.lastname}}</td>
+            <td width="15%">{{u.email}}</td>
+            <td width="15%">{{u.contact}}</td>
+            <th width="15%">{{u.status}}</th>
+            <td width="15%"><button mat-button color="primary">Edit</button> <button mat-button color="accent">Delete</button></td>
+        </tr>
+    </table>
+</mat-card>

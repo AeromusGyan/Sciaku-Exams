@@ -30,10 +30,8 @@ export class WelcomeComponent implements OnInit {
           if (this.allmember.status=true) {
             this.activemember=index+1;
           }
-          
         }
         if (this.allmember.status=true) {
-          
         }
       }
     )

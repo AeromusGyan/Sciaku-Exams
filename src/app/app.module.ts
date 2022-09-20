@@ -36,6 +36,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { AttemptedComponent } from './pages/user/attempted/attempted.component';
+import { UsersDetailComponent } from './pages/admin/welcome/users-detail/users-detail.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AttemptedComponent } from './pages/user/attempted/attempted.component';
     InstructionsComponent,
     QuizStartComponent,
     AttemptedComponent,
+    UsersDetailComponent,
   ],
   imports: [
     BrowserModule,

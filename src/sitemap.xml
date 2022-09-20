@@ -6,11 +6,44 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
   <loc>https://sciaku.com/</loc>
   <lastmod>2022-09-15T15:08:10+00:00</lastmod>
 </url>
-
-
+<url>
+  <loc>https://sciaku.com/user/0</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/1</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/2</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/3</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/4</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/5</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/6</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/pan/attempted</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://sciaku.com/user/pan/profile</loc>
+  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+</url>
 </urlset>

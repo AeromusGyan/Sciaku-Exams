@@ -5,12 +5,13 @@
         <div class="row text-center">
             <div class="col-md-6">
                 <mat-card>
-                    <img src="./../../../../assets/images/exam.png" alt="" height="100px">
-                    <p>Total Users <strong>{{allmember.length}}</strong></p>
+                    <div routerLink="/admin/users-detail">
+                        <img src="./../../../../assets/images/exam.png" alt="" height="100px">
+                        <p>Total Users <strong>{{allmember.length}}</strong></p></div>
                 </mat-card>
             </div>
             <div class="col-md-6">
-                <mat-card>
+                <mat-card routerLink="/admin/users-detail">
                 <img src="./../../../../assets/images/exam.png" alt="" height="100px">
                 <p>Active Users <strong>{{activemember}}</strong></p>
             </mat-card>
