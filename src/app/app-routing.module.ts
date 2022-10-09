@@ -13,6 +13,7 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { UsersDetailComponent } from './pages/admin/welcome/users-detail/users-detail.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'', component:HomeComponent,pathMatch:'full'},
   {path:'signup', component:SignupComponent,pathMatch:'full'},
   {path:'login', component:LoginComponent,pathMatch:'full'},
+  {path:'forgot', component:ForgotPasswordComponent,pathMatch:'full'},
   {path:'admin', component:DashboardComponent,canActivate:[AdminGuard],
   children:[
     {path:'', component:WelcomeComponent},

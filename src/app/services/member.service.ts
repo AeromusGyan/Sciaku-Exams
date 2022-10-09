@@ -17,4 +17,11 @@ export class MemberService {
   getAllMember(){
     return this.http.get(`${this.baseUrl}/user/`);
   }
+  getMemberByEmail(email:any){
+    return this.http.get(`${this.baseUrl}/user/update/`+email);
+  }
+  updateUser(userData:any){
+    return this.http.put(`${this.baseUrl}/user/update`,userData);
+  }
+
 }

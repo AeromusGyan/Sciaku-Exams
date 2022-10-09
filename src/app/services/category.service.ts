@@ -105,4 +105,8 @@ export class CategoryService {
     getResultByMember(id:any){
       return this.http.get(`${this.baseUrl}/result/member/`+ id);
     }
+
+    sendMail(mailData:any){
+      return this.http.post(`${this.baseUrl}/sendmail`,mailData);
+    }
 }
