@@ -31,6 +31,7 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent,pathMatch:'full'},
   {path:'login', component:LoginComponent,pathMatch:'full'},
   {path:'forgot', component:ForgotPasswordComponent,pathMatch:'full'},
+  
   {path:'admin', component:DashboardComponent,canActivate:[AdminGuard],
   children:[
     {path:'', component:WelcomeComponent},

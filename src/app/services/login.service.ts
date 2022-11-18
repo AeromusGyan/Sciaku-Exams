@@ -23,7 +23,6 @@ export class LoginService {
   // Login user set token in local storage
   loginUser(token:any){
     localStorage.setItem("token",token);
-      
   }
   isLoggedIn(){
     let tokenStr = localStorage.getItem("token");

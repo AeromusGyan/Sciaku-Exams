@@ -1,12 +1,14 @@
 
 <mat-card *ngIf="user">
+    {{user|json}}
     <!-- {{user|json}} -->
     <h1>Your Profile Detail</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
                 <div class="container text-center">
-                    <img class="profile-image" src="assets/images/default.jpg" alt="">
+                    <input type="file" value="select" #selectFile (change)="onFileSelected($event)">
+                    <img class="profile-image" src="{{imgUrl}}/{{user.profile}}" alt="" accept="image/*">
                     <h1 class="mt20">{{user.firstname}} {{user.lastname}}</h1>
                 </div>
                 <div class="row">
@@ -47,7 +49,7 @@
         </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
         <button mat-raised-button color="accent">SHARE</button>
       </mat-card-actions>
 </mat-card>

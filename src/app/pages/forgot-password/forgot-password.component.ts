@@ -58,6 +58,8 @@ export class ForgotPasswordComponent implements OnInit {
   sendEmailOtp() {
     this.spinner = true;
     this.otp = Math.floor(Math.random() * 999999);
+    console.log(this.otp);
+    
     // send otp
     this.mailObject.to = this.memberForm.value.email;
     this.mailObject.subject = "One Time Password (OTP) for reset your Password on Sciaku.com"
@@ -137,8 +139,9 @@ export class ForgotPasswordComponent implements OnInit {
         this.user.email = this.userData.email;
         this.user.password = this.forgotPassword.value.cpassword;
         this.user.city = this.userData.city;
+        this.user.profile = this.userData.profile;
         // console.log(this.user);
-        this.userApi.updateUser(this.user).subscribe(
+        this.userApi.updatePassword(this.user).subscribe(
           (data:any)=>{
             Swal.fire("Success",'Your password is updated Successfully!','success');
             this.router.navigate(["login"]);

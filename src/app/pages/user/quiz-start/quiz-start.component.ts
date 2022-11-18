@@ -22,8 +22,8 @@ export class QuizStartComponent implements OnInit {
   ];
 
   eval: any = {
-
   };
+  
   result: any = {
     marksGot: '',
     correct_answer: '',
