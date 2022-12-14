@@ -1,0 +1,27 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card class="mt20">
+            <div class="row">
+                <div class="col-md-12 col-sm-12" *ngFor="let c of course">
+                    <mat-card class="example-card">
+                        <div class="left">
+                            <img mat-card-image src="{{imgUrl}}/default.jpg" alt="Photo of a Shiba Inu">
+                        </div>
+                        <div class="right">
+                            <mat-card-header>
+                                <mat-card-title>{{c.v_title}}</mat-card-title>
+                                <mat-card-subtitle>{{c.v_description}}</mat-card-subtitle>
+                              </mat-card-header>
+                              <mat-card-actions>
+                                <button mat-raised-button color="warn" routerLink="/course/{{c.v_title}}/{{c.vId}}">Watch Video</button>
+                              <button mat-button color="accent">LIKE</button>
+                              <button mat-button color="primary">SHARE</button>
+                            </mat-card-actions>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

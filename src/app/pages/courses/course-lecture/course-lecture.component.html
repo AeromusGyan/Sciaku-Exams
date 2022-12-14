@@ -1,0 +1,39 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <mat-card class="mt20">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <mat-card class="example-card">
+                        <div class="left">
+                            <youtube-player videoId="HQpjvjHsBlM"> </youtube-player>
+
+                            <!-- <iframe src="https://www.youtube.com/embed/MqdlrAVtRzA" title="2023 JavaScript For All" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            <!-- <img mat-card-image src="{{imgUrl}}/default.jpg" alt="Photo of a Shiba Inu"> -->
+                            <mat-card-header>
+                                <mat-card-subtitle>{{course.date}}</mat-card-subtitle>
+                                <mat-card-subtitle>
+                                    <p>Course: {{course.courses.title}}</p>
+                                </mat-card-subtitle>
+                                <mat-card-title>Lecture: {{course.v_title}}</mat-card-title>
+                            </mat-card-header>
+                            
+                            <mat-card-content>
+                                <p>Description: {{course.v_description}}</p>
+                            </mat-card-content>
+<!-- {{course|json}} -->
+                        </div>
+                        <div class="right">
+                            <mat-card>
+                                <mat-card-header *ngFor="let c of courses">
+                                    <mat-card-title (click)="onVideo(c.v_title,c.vId)">{{c.v_title}}</mat-card-title>
+                                    <!-- <mat-card-subtitle class="truncate">{{c.v_description}}</mat-card-subtitle> -->
+                                  </mat-card-header>
+                            </mat-card>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

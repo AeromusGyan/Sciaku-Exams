@@ -1,0 +1,27 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <mat-card class="mt20">
+            <div class="row">
+                <div class="col-md-4 col-sm-12" *ngFor="let c of course">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                          <mat-card-title>{{c.title}}</mat-card-title>
+                          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                        </mat-card-header>
+                        <img mat-card-image src="{{imgUrl}}/default.jpg" alt="Photo of a Shiba Inu" height="300px">
+                        <mat-card-content>
+                          <p class="truncate">{{c.description}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-raised-button color="warn" routerLink="/course/{{c.title}}">Start Learning</button>
+                          <button mat-button color="accent">LIKE</button>
+                          <button mat-button color="primary">SHARE</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+

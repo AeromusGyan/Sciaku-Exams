@@ -1,0 +1,17 @@
+.example-card {
+    width: 100%;
+    float: left;
+  }
+.left{
+  float: left;
+  width: 20%;
+}
+.right{
+  float: left;
+  width: 80%;
+  padding: 20px;
+}
+.left img{
+  width: 230px;
+  height: 150px;
+}

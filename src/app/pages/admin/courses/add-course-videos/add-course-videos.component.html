@@ -1,0 +1,56 @@
+
+
+
+<mat-card>
+    <h1 class="text-left">Add New Quiz</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form [formGroup]="courseVideoForm" (ngSubmit)="Addbtn()">
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Title</mat-label>
+                            <input autofocus type="text" name="title" matInput formControlName="v_title"
+                                placeholder="Enter here">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <textarea name="description" matInput formControlName="v_description" placeholder="Enter here"
+                                rows="5"></textarea>
+                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Video URL</mat-label>
+                                    <input type="text" name="url" matInput formControlName="url"
+                                        placeholder="Enter here">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12">
+                                <mat-label>Thumbnail</mat-label>
+                            <input (change)="onFileSelected($event)" value="select" type="file"/>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-slide-toggle formControlName="status" class="example-margin" [color]="color" [checked]="checked">
+                                    Publish Status
+                                </mat-slide-toggle>
+                            </div>
+                            <br>
+                            <mat-form-field formGroupName="courses" class="w100 mt10" appearance="fill">
+                                <mat-label>Choose an Category</mat-label>
+                                <mat-select name="courses" formControlName="cId">
+                                  <mat-option *ngFor="let c of course" [value]="c.cId">{{c.title}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
+                        <div class="container text-center mt20">
+                            <button mat-raised-button color="primary">Add</button>
+                            <button class="ml20" style="margin-left: 20px;" type="reset" mat-stroked-button color="warn">Reset</button>
+                        </div>
+                    </form>
+                    <!-- {{quizForm.value|json}} -->
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
