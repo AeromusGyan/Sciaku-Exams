@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^15.0.3",
     "@angular/platform-browser-dynamic": "^15.0.3",
     "@angular/router": "^15.0.3",
+    "@angular/youtube-player": "^15.0.2",
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^34.1.0",
     "bootstrap-grid-only-css": "^4.1.3",
