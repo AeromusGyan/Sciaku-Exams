@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
@@ -13,9 +13,9 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(private _category:CategoryService, private _snackbar:MatSnackBar) { }
 
-  categoryForm = new FormGroup({
-    title : new FormControl('',Validators.required),
-    description : new FormControl('',Validators.required)
+  categoryForm = new UntypedFormGroup({
+    title : new UntypedFormControl('',Validators.required),
+    description : new UntypedFormControl('',Validators.required)
 })
 
   ngOnInit(): void {

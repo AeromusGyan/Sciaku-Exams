@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
@@ -19,15 +19,15 @@ export class AddQuestionComponent implements OnInit {
   disabled:boolean=true;
   constructor(private _route:ActivatedRoute, private _category:CategoryService, private _snackbar:MatSnackBar) { }
 
-  questionForm = new FormGroup({
-    content: new FormControl('',Validators.required),
-    option1: new FormControl('',Validators.required),
-    option2: new FormControl('',Validators.required),
-    option3: new FormControl('',Validators.required),
-    option4: new FormControl('',Validators.required),
-    answer: new FormControl('',Validators.required),
-    quiz:new FormGroup({
-      qid:new FormControl(null,Validators.required)
+  questionForm = new UntypedFormGroup({
+    content: new UntypedFormControl('',Validators.required),
+    option1: new UntypedFormControl('',Validators.required),
+    option2: new UntypedFormControl('',Validators.required),
+    option3: new UntypedFormControl('',Validators.required),
+    option4: new UntypedFormControl('',Validators.required),
+    answer: new UntypedFormControl('',Validators.required),
+    quiz:new UntypedFormGroup({
+      qid:new UntypedFormControl(null,Validators.required)
     },),
   })
 

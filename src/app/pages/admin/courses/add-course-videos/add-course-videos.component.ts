@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CoursesService } from 'src/app/services/courses.service';
@@ -22,15 +22,15 @@ export class AddCourseVideosComponent implements OnInit {
   
   course:any;
 
-  courseVideoForm=new FormGroup({
-    v_title:new FormControl('',Validators.required),
-    v_description:new FormControl('',Validators.required),
-    thumbnail:new FormControl('',Validators.required),
-    url:new FormControl('',Validators.required),
-    date: new FormControl(formatDate(new Date(), 'yyyy/MM/dd, h:mm:ss a ', 'en')),
-    status:new FormControl(true,Validators.required),
-    courses:new FormGroup({
-      cId:new FormControl(null,Validators.required)
+  courseVideoForm=new UntypedFormGroup({
+    v_title:new UntypedFormControl('',Validators.required),
+    v_description:new UntypedFormControl('',Validators.required),
+    thumbnail:new UntypedFormControl('',Validators.required),
+    url:new UntypedFormControl('',Validators.required),
+    date: new UntypedFormControl(formatDate(new Date(), 'yyyy/MM/dd, h:mm:ss a ', 'en')),
+    status:new UntypedFormControl(true,Validators.required),
+    courses:new UntypedFormGroup({
+      cId:new UntypedFormControl(null,Validators.required)
     },),
   });
   

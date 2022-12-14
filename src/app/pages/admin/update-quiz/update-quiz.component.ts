@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,14 +22,14 @@ export class UpdateQuizComponent implements OnInit {
 
   constructor(private _route:ActivatedRoute, private _service:CategoryService , private _snackbar:MatSnackBar, private router:Router) { }
 
-  quizForm=new FormGroup({
-    title:new FormControl('',Validators.required),
-    description:new FormControl('',Validators.required),
-    maxMarks:new FormControl('',Validators.required),
-    noOfQuestions:new FormControl('',Validators.required),
-    status:new FormControl(true,Validators.required),
-    category:new FormGroup({
-      cid:new FormControl(null,Validators.required)
+  quizForm=new UntypedFormGroup({
+    title:new UntypedFormControl('',Validators.required),
+    description:new UntypedFormControl('',Validators.required),
+    maxMarks:new UntypedFormControl('',Validators.required),
+    noOfQuestions:new UntypedFormControl('',Validators.required),
+    status:new UntypedFormControl(true,Validators.required),
+    category:new UntypedFormGroup({
+      cid:new UntypedFormControl(null,Validators.required)
     },),
   });
 

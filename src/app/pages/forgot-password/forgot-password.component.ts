@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
@@ -24,14 +24,14 @@ export class ForgotPasswordComponent implements OnInit {
     email:""
   };
   user:any = {};
-  memberForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    otp: new FormControl('', Validators.required),
+  memberForm = new UntypedFormGroup({
+    email: new UntypedFormControl('', Validators.required),
+    otp: new UntypedFormControl('', Validators.required),
   });
 
-  forgotPassword = new FormGroup({
-    npassword: new FormControl('', Validators.required),
-    cpassword: new FormControl('', Validators.required),
+  forgotPassword = new UntypedFormGroup({
+    npassword: new UntypedFormControl('', Validators.required),
+    cpassword: new UntypedFormControl('', Validators.required),
   });
 
   mailObject: any = {

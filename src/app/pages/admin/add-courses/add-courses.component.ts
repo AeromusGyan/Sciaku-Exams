@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
@@ -21,12 +21,12 @@ export class AddCoursesComponent implements OnInit {
   color: ThemePalette = 'accent';
   checked = false;
   
-  coursesForm = new FormGroup({
-    title : new FormControl('',Validators.required),
-    description : new FormControl('',Validators.required),
-    thumbnail : new FormControl('',Validators.required),
-    date: new FormControl(formatDate(new Date(), 'yyyy/MM/dd, h:mm:ss a ', 'en')),
-    status:new FormControl(true,Validators.required),
+  coursesForm = new UntypedFormGroup({
+    title : new UntypedFormControl('',Validators.required),
+    description : new UntypedFormControl('',Validators.required),
+    thumbnail : new UntypedFormControl('',Validators.required),
+    date: new UntypedFormControl(formatDate(new Date(), 'yyyy/MM/dd, h:mm:ss a ', 'en')),
+    status:new UntypedFormControl(true,Validators.required),
 })
 
   ngOnInit(): void {
