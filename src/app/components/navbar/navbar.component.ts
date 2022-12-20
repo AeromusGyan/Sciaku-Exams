@@ -18,14 +18,18 @@ export class NavbarComponent implements OnInit {
     this.isLoggedin = this.login.isLoggedIn();
     this.user = this.login.getUser();
   }
+  
   homePage() {
     // alert(JSON.stringify(this.user));
     if (this.login.getUserRole() == "ADMIN") {
       // Admin dashboard
       this.router.navigate(["admin"]);
     }
-    else{
+    else if(this.login.getUserRole() == "NORMAL"){
       this.router.navigate(["user/"+0]);
+    }
+    else{
+      this.router.navigate(["home"]);
     }
   }
 
@@ -36,4 +40,30 @@ export class NavbarComponent implements OnInit {
     window.location.reload();
 
   }
+  
+  myFunction() {
+    var x = document.getElementById("myTopnav");
+    // x?.classList.toggle('responsive');
+    if (x?.className == "row topnav") {
+      x.className += (" responsive");
+      var y = document.getElementById("tool");
+      if (y?.className == "mat-toolbar food-btn mat-primary mat-toolbar-single-row") {       
+        y.className += (" nav");
+      }
+      // else if (y?.className == "mat-toolbar food-btn mat-primary mat-toolbar-single-row nav") {
+      //   y.classList.remove("nav");
+      // }
+      // else {
+      //   y?.className == "mat-toolbar food-btn mat-primary mat-toolbar-single-row";
+      // }
+    }
+    else if (x?.className == "row topnav responsive") {
+      x.classList.remove("responsive");
+    }
+    else {
+      x?.className == "row topnav";
+    }
+    console.log(x);
+  }
+
 }

@@ -1,3 +1,4 @@
+
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row mt50" >
@@ -8,32 +9,31 @@
                     </div>
                     <h1 class="text-center">Login here</h1>
     <!-- {{memberForm.value|json}} -->
-                    <form [formGroup]="memberForm" (ngSubmit)="Submit()">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Username</mat-label>
-                            <input type="username" name="username" formControlName="username" matInput placeholder="Enter here">
-                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                            <mat-error>Username is required</mat-error>
-                            <!-- <mat-hint>Hint</mat-hint> -->
+                    <form [formGroup]="memberForm">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput formControlName="username">
+                            <mat-icon matPrefix>account_circle</mat-icon>
+                            <mat-error>Please enter valid email</mat-error>
                         </mat-form-field>
-                        <mat-form-field class="full-width" appearance="outline">
+                        <mat-form-field class="w100" appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input type="password" name="password" formControlName="password" matInput placeholder="Enter here">
-                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                            <mat-error>Password is required</mat-error>
-                            <!-- <mat-hint>Hint</mat-hint> -->
+                            <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+                            <mat-icon matPrefix>lock</mat-icon>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                            <mat-error>Password should be minimum 6 characters</mat-error>
                         </mat-form-field>
                         
                         <div class="container text-center">
                             <!-- [disabled]="!memberForm.valid" -->
-                            <button type="submit"  mat-raised-button color="primary">Login</button>
+                            <button type="submit"  mat-raised-button color="primary" (click)="Submit()">Login</button>
                             <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
                             <button type="forgot" style="margin-left: 20px;" mat-raised-button color="primary" routerLink="/forgot">Forgot Password</button>
                         </div>
                     </form>
-                </mat-card>
-                
-                
+                </mat-card>                
             </div>
         </div>
     </div>

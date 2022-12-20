@@ -1,4 +1,8 @@
-
+.example-card {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+}
   .content {
     position: static;
     bottom: 0;

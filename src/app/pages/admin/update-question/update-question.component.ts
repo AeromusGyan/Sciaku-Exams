@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
@@ -17,15 +17,15 @@ export class UpdateQuestionComponent implements OnInit {
 
   constructor(private _route:ActivatedRoute, private _category:CategoryService, private _snackbar:MatSnackBar, private router:Router) { }
 
-  questionForm = new UntypedFormGroup({
-    content: new UntypedFormControl('',Validators.required),
-    option1: new UntypedFormControl('',Validators.required),
-    option2: new UntypedFormControl('',Validators.required),
-    option3: new UntypedFormControl('',Validators.required),
-    option4: new UntypedFormControl('',Validators.required),
-    answer: new UntypedFormControl('',Validators.required),
-    quiz:new UntypedFormGroup({
-      qid:new UntypedFormControl(null,Validators.required)
+  questionForm = new FormGroup({
+    content: new FormControl('',Validators.required),
+    option1: new FormControl('',Validators.required),
+    option2: new FormControl('',Validators.required),
+    option3: new FormControl('',Validators.required),
+    option4: new FormControl('',Validators.required),
+    answer: new FormControl('',Validators.required),
+    quiz:new FormGroup({
+      qid:new FormControl(null,Validators.required)
     },),
   })
   ngOnInit(): void {

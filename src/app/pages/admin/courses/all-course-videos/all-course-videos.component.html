@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper">
+    <h1 class="mt10 mr20 ml20">Lectures of <span style="color: grey; font-weight:bold;">{{qTitle}}</span></h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="containner text-center">
+                <button mat-raised-button color="accent" routerLink="/admin/add-course-video">Add Course Video</button>
+            </div>
+            <!-- {{questions|json}} -->
+            <mat-card class="mt20 card" *ngFor="let q of questions; index as i">
+                <mat-card-content>
+                    <p>
+                        <strong>Lecture {{i+1}}) {{q.v_title}}</strong>
+                    </p>
+                    <p><span class="ml10 truncate" [innerHtml]="q.v_description"></span></p>
+                    <div class="container-fluid">
+
+                        <mat-divider></mat-divider>
+                        <div class="row">
+                            <div class="col-md-2 mt20">
+                                <button routerLink="/admin/update-course-video/{{q.vId}}/{{q.v_title}}"
+                                    mat-raised-button color="accent">Update Lecture</button>
+                            </div>
+                            <div class="col-md-2 mt20">
+                                Status
+                                <mat-slide-toggle class="example-margin" [color]="color"
+                                [checked]="checked" [(ngModel)]="q.status">
+                            </mat-slide-toggle>
+                            </div>
+                            <div class="col-md-2 offset-md-6 mt20 ">
+                                <button (click)="deleteQuestion(q.vId)" mat-fab color="warn"
+                                    style="margin-left: 30px;"><mat-icon>delete</mat-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

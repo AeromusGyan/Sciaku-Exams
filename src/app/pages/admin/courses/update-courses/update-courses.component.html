@@ -1,0 +1,35 @@
+
+
+
+<mat-card>
+    <h1 class="text-left">Add Courses</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form [formGroup]="coursesForm" (ngSubmit)="onUpdate()">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Course Title</mat-label>
+                            <input autofocus type="text" name="title" matInput formControlName="title" [(ngModel)]="courses.title" placeholder="Enter here">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Course Description</mat-label>
+                            <textarea name="description" matInput formControlName="description" [(ngModel)]="courses.description" placeholder="Enter here" rows="10"></textarea>
+                        </mat-form-field>
+                        <div class="col-md-6">
+                            <mat-slide-toggle formControlName="status" [(ngModel)]="courses.status" class="example-margin" [color]="color" [checked]="checked">
+                                Publish Status
+                            </mat-slide-toggle>
+                        </div>
+                        <br>
+                            <mat-label>Thumbnail</mat-label>
+                            <input (change)="onFileSelected($event)" value="select" type="file"/>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Update Course</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

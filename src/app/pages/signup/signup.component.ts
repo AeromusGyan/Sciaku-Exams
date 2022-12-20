@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
 import { MemberService } from 'src/app/services/member.service';
 import Swal from 'sweetalert2';
@@ -14,16 +14,15 @@ import Swal from 'sweetalert2';
 export class SignupComponent implements OnInit {
 
   constructor(private api: MemberService, private http: HttpClient, private _snackBar: MatSnackBar, private mailApi: CategoryService) { }
-
-  memberForm = new UntypedFormGroup({
-    username: new UntypedFormControl('', Validators.required),
-    password: new UntypedFormControl('', Validators.required),
-    firstname: new UntypedFormControl('', Validators.required),
-    lastname: new UntypedFormControl(''),
-    email: new UntypedFormControl('', Validators.required),
-    contact: new UntypedFormControl('', Validators.required),
-
-    city: new UntypedFormControl(''),
+  hide = true;
+  memberForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    firstname: new FormControl('', Validators.required),
+    lastname: new FormControl(''),
+    email: new FormControl('', Validators.required),
+    contact: new FormControl('', Validators.required),
+    city: new FormControl(''),
 
   })
   durationInSeconds = 2;

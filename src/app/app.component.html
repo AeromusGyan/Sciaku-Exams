@@ -1,11 +1,11 @@
-
-<!-- <ngx-ui-loader fgsColor="#ff4081" pbColor="#ff4081" text="Please wait..." textColor="#ff4081"></ngx-ui-loader> -->
+<!-- ff4081 -->
+<ngx-ui-loader [fgsSize]=150 fgsType="three-strings" fgsColor="#3f51b5" pbColor="#3f51b5" [pbThickness]="5" textColor="#ff4081"></ngx-ui-loader>
 
 <!-- <div ngxUiLoaderBlurred [blur]="10"> -->
     <!-- This page content will be blurred/frosted when foreground loader is showed -->
 <app-navbar></app-navbar>
 <div style="min-height: 550px;">
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 <app-footer></app-footer>
   <!-- </div> -->

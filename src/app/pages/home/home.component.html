@@ -1,41 +1,86 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
+<section class="Home_banner__WnS5R">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center navbar-brand-font">Master <span>Coding</span><span
+                        class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></h1>
+                <p class="text-center">Best Video Courses in HINDI, These courses are totally free of cost. Thousands of
+                    people learn from these courses daily. Our effort is to make you learn the technology in Practical
+                    way.</p>
+                <div class="text-center container"><a class="btn" mat-raised-button color="primary" routerLink="/courses">Click here to start</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <app-courses></app-courses>
+            </div>
+        </div>
+    </div>
+</section>
+ <div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <mdb-carousel [controls]="true" [indicators]="false" [dark]="true" [animation]="'fade'" >
+                    <mdb-carousel-item>
+                        <img src="assets/images/home/h1.jpg" class="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="mslider-details">
+                                <div class="slider-text1 text-thm2">Charity organizations</div>
+                                <div class="slider-text2">Build a Beautiful World</div>
+                                <div class="slider-text3">
+                                    <p>We Build a Fundraising For Help Less People</p>
+                                </div>
+                                <a routerLink="/donate" class="btn btn-lg ulockd-btn-thm2 ulockd-home-btn" data-toggle="modal"
+                                    data-target=".bs-example-modal-default"><span> Donate Now</span></a>
+                            </div>
+                        </div>
+                    </mdb-carousel-item>
+                </mdb-carousel> -->
+            </div>
+        </div>
+
+    </div>
+</div> 
+<section>
+    <div class="container-fluid">
         <mat-card class="mt20">
             <div class="row">
-                <mat-card-header>
-                    <mat-card-title><h1 class="text-center">Great way to start Interactive quizzes for Engineering Students</h1></mat-card-title>
-                </mat-card-header>
+                <div class="col-md-12">
+                        <div class="text-center">
+                            <h1 >Great way to start Interactive quizzes for Engineering Students</h1>
+                        </div>
+                </div>
+                <div class="col-md-8 offset-md-2">
                 <mat-card-content>
                     <p class="text-center m10">
-                        <mat-card-subtitle>Welcome to the <a href="https://sciaku.com/">Sciaku.com</a>.</mat-card-subtitle>
+                        <mat-card-subtitle>Welcome to the <a
+                                href="https://sciaku.com/">Sciaku.com</a>.</mat-card-subtitle>
                         It's a very fast and easy to create a fun, interactive quizzes, so let's <a
                             routerLink="/signup">Register</a> on Sciaku and
                         Login for attempts to the quizzes. Sciaku having a many quizzes in many Categories for B.Tech
                         Engineering Students. Quizzes having many questions and many different options and answers. your
                         all attempted quizzes showing in <a routerLink="/user/pan/attempted">Quiz attempts</a>.
-                        Here you see your performance and results. You download your result in PDF format when you submit any quiz.
+                        Here you see your performance and results. You download your result in PDF format when you
+                        submit any quiz.
                     </p>
                 </mat-card-content>
+                </div>
             </div>
         </mat-card>
-        <mat-card class="mt20">
-            <div class="row">
-                <mat-card-header>
-                    <div class="col-md-10">
-                        <mat-card-title>My Own YouTube Videos</mat-card-title>
-                    </div>
-                    <div class="col-md-2 offset-md-11">
-                        <button mat-button style="background-color: red;"><a style=" color:white; text-decoration:none;"
-                                href="https://www.youtube.com/channel/UCkjl-snXMAF_pVAJdSVRGyQ"
-                                target="_blank">Subscribe Now</a></button>
-                    </div>
-                </mat-card-header>
-            </div>
-        </mat-card>
+    </div>
+</section>
+<section>
+    <div class="container">
         <div class="row mt20 ">
-            <!-- offset-md-3 text-center -->
             <div class="col-md-6 mb20">
                 <mat-card class="example-card card">
+                    <youtube-player></youtube-player>
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>
                         <mat-card-title>
@@ -89,12 +134,8 @@
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-
-                    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
                     <mat-card-content>
-                        <p>
-                            10 Latest Technology You Should Know About That BY SCIAKU (Science Knowledge)
-                        </p>
+                        <p>10 Latest Technology You Should Know About That BY SCIAKU (Science Knowledge)</p>
                     </mat-card-content>
                     <mat-card-actions>
                     </mat-card-actions>
@@ -102,4 +143,24 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              <mat-card class="mt20">
+            <div class="row text-center mt20">
+                <div class="col-md-4">
+                    <h1>My Own YouTube Videos</h1>
+                </div>
+                <div class="col-md-4 offset-md-4">
+                    <button mat-button style="background-color: red;"><a style=" color:white; text-decoration:none;"
+                            href="https://www.youtube.com/channel/UCkjl-snXMAF_pVAJdSVRGyQ" target="_blank">Subscribe
+                            Now</a></button>
+                </div>
+            </div>
+        </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

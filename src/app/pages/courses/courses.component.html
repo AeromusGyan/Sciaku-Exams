@@ -1,27 +1,48 @@
+<section>
 <div class="bootstrap-wrapper">
-    <div class="container-fluid">
-        <mat-card class="mt20">
-            <div class="row">
-                <div class="col-md-4 col-sm-12" *ngFor="let c of course">
-                    <mat-card class="example-card">
-                        <mat-card-header>
-                          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-                          <mat-card-title>{{c.title}}</mat-card-title>
-                          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-                        </mat-card-header>
-                        <img mat-card-image src="{{imgUrl}}/default.jpg" alt="Photo of a Shiba Inu" height="300px">
-                        <mat-card-content>
-                          <p class="truncate">{{c.description}}</p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-raised-button color="warn" routerLink="/course/{{c.title}}">Start Learning</button>
-                          <button mat-button color="accent">LIKE</button>
-                          <button mat-button color="primary">SHARE</button>
-                        </mat-card-actions>
-                      </mat-card>
-                </div>
+  <div class="container-fluid">
+      <mat-card class="mt20">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                    <h1 class="top">Top Free Courses</h1>
+                    <mat-divider></mat-divider>
             </div>
-        </mat-card>
-    </div>
-</div>
+            <mat-divider></mat-divider>
+        </div>
+        <!-- {{course|json}} -->
+        <div class="container">
+          <div class="row" *ngIf="loader">
+              <div class="col-md-4 col-sm-12 course" *ngFor="let c of course;index as i">
+                  <mat-card class="example-card">
+                      <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-title>#{{i+1}} {{c.title}}</mat-card-title>
+                        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                      </mat-card-header>
+                      <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}" height="250px">
+                      <mat-card-content>
+                        <p class="truncate">{{c.description}}</p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                          <button mat-raised-button color="warn" routerLink="/courses/course-details/{{c.cId}}">Start Learning</button>
+                        <button mat-button color="accent">LIKE</button>
+                        <button mat-button color="primary">SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+              </div>
 
+          </div></div>
+          <div class="row">
+            <div class="col-md-12" *ngIf="!loader">
+              <mat-card>
+                <h1 class="text-center">Courses are not found!!</h1>
+              </mat-card>
+            </div>
+            <div class="col-md-12" *ngIf="!spinner">
+              <!-- <mat-spinner></mat-spinner> -->
+            </div>
+          </div>
+      </mat-card>
+  </div>
+</div>
+</section>

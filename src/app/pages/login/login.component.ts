@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
@@ -10,13 +10,14 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
+  hide = true;
   durationInSeconds: any = 3;
   constructor(private login: LoginService, private _snackBar: MatSnackBar, private router: Router) { }
-  memberForm = new UntypedFormGroup({
-    username: new UntypedFormControl('', Validators.required),
-    password: new UntypedFormControl('', Validators.required),
+  memberForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   })
 
   ngOnInit(): void {

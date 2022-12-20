@@ -2,10 +2,11 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MemberService } from 'src/app/services/member.service';
 import Swal from 'sweetalert2';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-course-videos',
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-course-videos.component.css']
 })
 export class AddCourseVideosComponent implements OnInit {
+  public Editor = ClassicEditor;
   files: any;
   constructor(private _courses:CoursesService, private _snackbar:MatSnackBar, private _member:MemberService) { }
 
@@ -45,7 +47,7 @@ export class AddCourseVideosComponent implements OnInit {
   }
   
 Addbtn(){
-  alert(JSON.stringify(this.courseVideoForm.value));
+  // alert(JSON.stringify(this.courseVideoForm.value));
   this.courseVideoForm.value.thumbnail = this.files.name;
   if(this.courseVideoForm.value.v_title =='' || this.courseVideoForm.value.v_title ==null)
   {
@@ -77,13 +79,11 @@ Addbtn(){
       duration:3000,
     })
   }
-    
   else{
-    
     this._member.postFile("profile",this.files).subscribe();
     this._courses.addCourseVideos(this.courseVideoForm.value).subscribe(
       (data:any)=>{
-        this.courseVideoForm.reset();
+        // this.courseVideoForm.reset();
           Swal.fire('Success','Video is added successfully !!','success');
       },
       (error:any)=>{

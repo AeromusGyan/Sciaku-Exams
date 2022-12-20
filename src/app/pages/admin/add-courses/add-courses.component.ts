@@ -2,7 +2,7 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MemberService } from 'src/app/services/member.service';
@@ -46,7 +46,7 @@ export class AddCoursesComponent implements OnInit {
     }
     
     this.coursesForm.value.thumbnail = this.files.name;
-    alert(JSON.stringify(this.coursesForm.value))
+    // alert(JSON.stringify(this.coursesForm.value))
     
     this._member.postFile("profile",this.files).subscribe();
     this._courses.addCourses(this.coursesForm.value).subscribe(

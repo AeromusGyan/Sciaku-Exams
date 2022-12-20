@@ -1,6 +1,86 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.logo {
+  cursor: pointer;
+}
+
 .mat-toolbar-single-row {
-  padding: 40px 16px;  }
-.logo{cursor: pointer;}
+  position: relative;
+}
+
+.topnav {
+  overflow: hidden;
+}
+.mat-toolbar-single-row {
+  padding: 40px 16px;
+}
+/* .topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+} */
+
+.topnav button:hover {
+background-color: #ddd;
+}
+
+
+.menu .icon {
+  display: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .mat-toolbar-single-row {
+    padding: 40px 16px;
+  }
+  .topnav .button{
+    display: none;
+  }
+   .menu .icon {
+    /* float: right; */
+    position: fixed;
+    right: 10px;
+    top:25px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mat-toolbar-single-row {
+    padding: 0px 15px;
+  }
+  .nav{
+    height: auto;
+  }
+  .topnav .responsive {
+    position: relative;
+  }
+  .topnav.responsive .menu .icon {
+    position: absolute;
+    /* right: 0;
+    top: -10px; */
+  }
+  .topnav .responsive .hide .button {
+    display: none;
+  }
+  .topnav.responsive .button {
+    width: 100%;
+    float: right;
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .topnav.responsive .button button{
+    width: 100%;
+  }
+  
+}
+

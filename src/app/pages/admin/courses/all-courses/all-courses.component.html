@@ -1,0 +1,48 @@
+
+
+<div class="bootstrap-wrapper">
+    <h1 class="mt10 mr20 ml20">All Courses</h1>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-courses" mat-flat-button color="accent">Add Courses</button>
+    </div>
+    <div *ngFor="let c of courses">
+        <mat-card class="mt10 card">
+            <div class="row">
+                <div class="col-md-3 ml20">
+                    <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}" height="250px">
+                </div>
+                <div class="col-md-9 ml20">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>{{c.title}}</h1>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{c.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+                <div class="row">
+                    <div class="col-md-2">
+                        <button routerLink="/admin/course-lectures/{{c.cId}}/{{c.title}}" mat-flat-button color="accent" class="mr20 ml20">Lectures</button>
+                    </div>
+                    
+                    <div class="col-md-1">
+                        Status
+                        <mat-slide-toggle class="example-margin" [color]="color"
+                        [checked]="checked" [(ngModel)]="c.status">
+                    </mat-slide-toggle>
+                        <!-- <button mat-stroked-button color="accent" >Status:{{c.status}}</button> -->
+                    </div>
+                    
+                    <div class="col-md-1">
+                        <button mat-flat-button color="accent" class="ml20" routerLink="/admin/update-courses/{{c.cId}}">Update</button>
+                    </div>
+                    <div class="col-md-1 offset-md-6">
+                    <button (click)="deleteCourse(c.cId)" mat-fab color="warn" class="ml20"><mat-icon>delete</mat-icon></button>
+                    </div>
+                </div>
+        </mat-card>
+    </div>
+</div>
+<!-- {{courses|json}} -->

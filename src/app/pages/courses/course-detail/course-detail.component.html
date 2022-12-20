@@ -1,27 +1,46 @@
-
 <div class="bootstrap-wrapper">
     <div class="container">
-        <mat-card class="mt20">
+        <mat-card>
+            <!-- {{course|json}} -->
             <div class="row">
-                <div class="col-md-12 col-sm-12" *ngFor="let c of course">
-                    <mat-card class="example-card">
-                        <div class="left">
-                            <img mat-card-image src="{{imgUrl}}/default.jpg" alt="Photo of a Shiba Inu">
-                        </div>
-                        <div class="right">
-                            <mat-card-header>
-                                <mat-card-title>{{c.v_title}}</mat-card-title>
-                                <mat-card-subtitle>{{c.v_description}}</mat-card-subtitle>
-                              </mat-card-header>
-                              <mat-card-actions>
-                                <button mat-raised-button color="warn" routerLink="/course/{{c.v_title}}/{{c.vId}}">Watch Video</button>
-                              <button mat-button color="accent">LIKE</button>
-                              <button mat-button color="primary">SHARE</button>
-                            </mat-card-actions>
-                        </div>
-                    </mat-card>
+                <div class="col-md-12 course" *ngIf="!loader">
+                    <h1 class="text-center">Course is not Found!!!</h1>
+                </div>
+                <div class="col-md-12 course" *ngIf="!spinner">
+                    <!-- <mat-spinner class="text-center"></mat-spinner> -->
+                </div>
+                <div class="col-md-12 offset-0 course" *ngIf="loader">
+                    <h1 class="top">{{course[0].courses.title}}</h1>
+                    <p class="text-muted">{{course[0].courses.description}}</p>
+                    <div class="container">
+                        <button mat-raised-button color="primary"
+                            routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{course[0].v_title}}/{{course[0].vId}}">Start Course</button>
+                    </div>
                 </div>
             </div>
+        </mat-card>
+        <mat-card class="mt20" *ngIf="loader">
+            <div class="col-md-12">
+                <h1 class="text-center top">Course Videos is here</h1>
+            </div>
+            <mat-card class="example-card" *ngFor="let c of course;index as i">
+                <div class="row" >
+                    <div class="col-md-3 left">
+                        <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}">
+                    </div>
+                    <div class="col-md-9">
+                            <mat-card-header>
+                                <mat-card-title class="title">#{{i+1}} {{c.v_title}}</mat-card-title>
+                            </mat-card-header>
+                            <p class="truncate" [innerHTML]="c.v_description"></p>
+                            <mat-card-actions>
+                                <button mat-raised-button color="warn" routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{c.v_title}}/{{c.vId}}">Watch
+                                    Video</button>
+                                <button mat-button color="accent">LIKE</button>
+                                <button mat-button color="primary">SHARE</button>
+                            </mat-card-actions>
+                    </div>
+                </div></mat-card>
         </mat-card>
     </div>
 </div>

@@ -1,18 +1,17 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SignupComponent } from './pages/signup/signup.component';
-import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
+
+import { FooterComponent } from './components/footer/footer.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
@@ -38,37 +37,26 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { AttemptedComponent } from './pages/user/attempted/attempted.component';
 import { UsersDetailComponent } from './pages/admin/welcome/users-detail/users-detail.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { CoursesModule } from './pages/courses/courses.module';
+import { AddCourseVideosComponent } from './pages/admin/courses/add-course-videos/add-course-videos.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddCoursesComponent } from './pages/admin/add-courses/add-courses.component';
+import { LoginComponent } from './pages/login/login.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { AllCoursesComponent } from './pages/admin/courses/all-courses/all-courses.component';
+import { AllCourseVideosComponent } from './pages/admin/courses/all-course-videos/all-course-videos.component';
+import { UpdateCourseVideoComponent } from './pages/admin/courses/update-course-video/update-course-video.component';
+import { UpdateCoursesComponent } from './pages/admin/courses/update-courses/update-courses.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    SignupComponent,
-    LoginComponent,
-    HomeComponent,
-    DashboardComponent,
-    UserDashboardComponent,
-    ProfileComponent,
-    SidebarComponent,
-    WelcomeComponent,
-    AddCategoryComponent,
-    ViewCategoriesComponent,
-    ViewQuizzesComponent,
-    AddQuizComponent,
-    UpdateQuizComponent,
-    ViewQuizQuestionsComponent,
-    AddQuestionComponent,
-    UpdateQuestionComponent,
-    UserSidebarComponent,
-    UserWelcomeComponent,
-    LoadQuizComponent,
-    UserProfileComponent,
-    InstructionsComponent,
-    QuizStartComponent,
-    AttemptedComponent,
-    UsersDetailComponent,
+    AppComponent,NavbarComponent, FooterComponent, SignupComponent,HomeComponent, DashboardComponent,
+    UserDashboardComponent,ProfileComponent, SidebarComponent,WelcomeComponent, AddCategoryComponent, ViewCategoriesComponent,
+    ViewQuizzesComponent,AddQuizComponent,UpdateQuizComponent, ViewQuizQuestionsComponent,AddQuestionComponent,
+    UpdateQuestionComponent,UserSidebarComponent,UserWelcomeComponent,LoadQuizComponent,UserProfileComponent,
+    InstructionsComponent,QuizStartComponent,AttemptedComponent,UsersDetailComponent,
     ForgotPasswordComponent,
+    AddCourseVideosComponent,AddCoursesComponent,LoginComponent, AllCoursesComponent, AllCourseVideosComponent, UpdateCourseVideoComponent, UpdateCoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -80,10 +68,12 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     HttpClientModule,
     RouterModule,
     CKEditorModule,
+    YouTubePlayerModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true
     }),
+    CoursesModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-
+  hide =true;
   constructor(private login: LoginService, private _snackBar: MatSnackBar, private router: Router, private mailApi: CategoryService, private userApi: MemberService) { }
   durationInSeconds: any = 3;
   otpEnable = false;

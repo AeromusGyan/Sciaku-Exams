@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 import { environment } from 'src/environments/environment';
@@ -10,53 +10,107 @@ import Swal from 'sweetalert2';
   templateUrl: './course-lecture.component.html',
   styleUrls: ['./course-lecture.component.css']
 })
-export class CourseLectureComponent implements OnInit {
-  imgUrl:any=environment.imgUrl;
-  courses: any=[];
-  apiLoaded: any=false;
+export class CourseLectureComponent {
 
-  constructor(private _courses:CoursesService, private _snackbar:MatSnackBar, private _router:Router, private _route:ActivatedRoute) { }
-  
-  course:any={};
-  vid:any;
+  videoId: any;
+  height: any = 500;
+  width: any = 950;
+  imgUrl: any = environment.imgUrl;
+  courses: any = [];
+  apiLoaded: any = false;
+  loader: any = false;
+  spinner: boolean = false;
+  vid: any;
+  course: any = {
+    courses: {
+      title: ''
+    }
+  };
+  questions: any;
+  cid: any;
+
+  constructor(private _courses: CoursesService, private _snackbar: MatSnackBar, private _route: ActivatedRoute, private _router: Router) { }
 
   ngOnInit(): void {
     this.vid = this._route.snapshot.params['id'];
+    this.cid = this._route.snapshot.params['cid'];
+    if (window.innerWidth < 600) {
+      this.width = window.innerWidth - 70;
+      this.height = window.innerHeight - 430;
+    }
+    else {
+      this.width = window.innerWidth - 600;
+      this.height = window.innerHeight - 200;
+    }
     if (!this.apiLoaded) {
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
-    console.log(this.vid);
+    // console.log(this.width);
+    // console.log(this.height);
     this.getCourseById(this.vid);
-    this.getAllCourses();
+    this.getAllVideoOfCourse();
   }
-  ngOnChange():void{
-  }
-  getAllCourses(){
-    this._courses.getAllCourseVideo().subscribe(
-      (data:any)=>{
-        this.courses=data;
+  getAllVideoOfCourse() {
+    this._courses.getAllActiveCourseVideo(this.cid).subscribe(
+      (data: any) => {
+        this.courses = data;
+        if (this.courses.length != 0) {
+          this.loader = true;
+        }
+        else{
+          this.loader = false;
+        }
+        
+        this.spinner = true;
       },
-      (error:any)=>{
+      (error: any) => {
         console.log(error);
-        Swal.fire('Error','Error in loading data','error');
+        Swal.fire('Error', 'Error in loading data', 'error');
       }
     )
   }
-
-  getCourseById(vid:any){
+  getCourseById(vid: any) {
     this._courses.getCourseVideoById(vid).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.course = data;
+        this.videoId = this.course.url;
+        this.spinner = true;
+        if (this.course.length == 0 || this.course == undefined) {
+          this.loader = true;
+        }
       })
 
   }
-  onVideo(title:any,vId:any){
-    this._router.navigate(['/course/'+ title +"/"+vId]);
+  onVideo(title: any, vId: any, index: any) {
+    this._router.navigate(['/course/' + title + "/" + vId]);
     this.getCourseById(vId);
-    console.log(vId);
-    
+    // console.log(vId);
+    // this.onActive(index);  
+  }
+  onActive(index: any) {
+    var x = document.getElementById("list" + index);
+    const id = index;
+    if (id != index) {
+      x?.classList.toggle('active');
+    }
+    if (id == index) {
+      var y = document.getElementById("list" + index);
+      console.log(y);
+
+      x?.classList.remove('active');
+    }
+    if (x?.className == "list") {
+      x.className += (" active");
+    }
+    else if (x?.className == "list active") {
+      x.classList.remove("active");
+    }
+    console.log(x);
+    // else {
+    //   x?.className == "row topnav";
+    // }
   }
 }

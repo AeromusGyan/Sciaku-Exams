@@ -1,8 +1,26 @@
 .example-card {
-    max-width: 400px;
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.top {
+  padding: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-sarif;
+  text-transform: uppercase;
+}
+
+.course {
+  padding: 10px;
+}
+
+@media screen {
+  .example-card {
+    max-width: 100%;
   }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+}

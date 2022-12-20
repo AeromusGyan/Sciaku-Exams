@@ -1,17 +1,44 @@
-.example-card {
+/* .example-card {
     width: 100%;
     float: left;
-  }
+  } */
 .left{
-  float: left;
-  width: 70%;
+  width: 100%;
+  /* background-color: #fff131; */
 }
-.right{
-  float: left;
-  width: 30%;
+
+.left .player{
+  width: 100%;
   padding: 20px;
 }
-.left iframe{
+.right{
+  /* background-color: #fff131; */
+  /* float: left; */
   width: 100%;
-  height: 500px;
+  padding: 10px;
+}
+.right mat-card{
+  width: 100%;
+  min-height: 550px;
+  height: 550px;
+  overflow-x: visible; 
+  overflow-y: scroll;
+}
+.right mat-card mat-card-header{
+  background-color: bisque;
+  margin-bottom: 10px;
+}
+.right mat-card mat-action-list div:hover{
+  background-color: #a4a5a8;
+}
+/* .right mat-card mat-action-list div:active{
+  background-color: #173b9c;
+}
+.right mat-card mat-action-list div:visited{
+  background-color: #173b9c;
+} */
+.active{
+  color: #fff;
+  background-color: #173b9c;
+  /* background-color: #a4a5a8; */
 }

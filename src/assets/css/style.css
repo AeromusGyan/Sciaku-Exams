@@ -20,6 +20,7 @@
 
 .mb20{margin-bottom: 20px;}
 
+.mr20{margin-right: 20px;}
 .w100{width: 100%;}
 
 .text-left{text-align: left;}
@@ -38,7 +39,24 @@
 
 .card { transition: transform 0.2s ease; box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18); border-radius: 10px; border: 0; margin-bottom: 1.5em; }
 
-.logo{ height: 90px; margin-top: 10px; }
+.logo{ height: 90px; margin-top: -12px; }
+
+.truncate{
+  display:block;
+  white-space: nowrap;
+  width: 100%;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate:hover{
+  white-space: normal;
+  width: 100%;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media screen and (max-width: 992px) {
     body {
