@@ -26,10 +26,7 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(["admin"]);
     }
     else if(this.login.getUserRole() == "NORMAL"){
-      this.router.navigate(["user/"+0]);
-    }
-    else{
-      this.router.navigate(["home"]);
+      this.router.navigate([""]);
     }
   }
 

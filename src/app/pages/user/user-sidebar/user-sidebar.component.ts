@@ -16,7 +16,7 @@ export class UserSidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategory();
-    this.menu=true;
+    this.menu=false;
   }
   getCategory(){
     this._cat.Categories().subscribe(

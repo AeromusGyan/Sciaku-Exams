@@ -62,17 +62,17 @@ export class LoginComponent {
               if (this.login.getUserRole() == "ADMIN") {
                 // Admin dashboard
                 setTimeout(() => {
-                  // window.location.href="/admin";
-                  this.router.navigate(["admin"]);
+                  window.location.href="/admin";
+                  // this.router.navigate(["admin"]);
                 }, 1000);
-                Swal.fire('Successfuly done !!', 'User role is ' + this.login.getUserRole(), 'success');
+                Swal.fire('You are Logged in !!', 'User role is ' + this.login.getUserRole(), 'success');
               }
               else if (this.login.getUserRole() == "NORMAL") {
                 // User dashboard
-                Swal.fire('Successfuly done !!', 'User role is ' + this.login.getUserRole(), 'success');
+                Swal.fire('You are Logged in !!', 'User role is ' + this.login.getUserRole(), 'success');
                 setTimeout(() => {
-                  // window.location.href='/user/'+0;
-                  this.router.navigate(["user/0"]);
+                  window.location.href='/';
+                  // this.router.navigate(["courses"]);
                 }, 1000);
               }
               else {

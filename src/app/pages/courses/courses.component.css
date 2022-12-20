@@ -2,25 +2,30 @@
   max-width: 400px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
 .top {
   padding: 20px;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   font-family: sans-sarif;
   text-transform: uppercase;
 }
-
+.c_title{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-sarif;
+}
 .course {
   padding: 10px;
 }
 
-@media screen {
+@media screen and (max-width: 600px) {
   .example-card {
     max-width: 100%;
+  }
+  .top{
+    font-size: 20px;
+  }
+  .c_title{
+    font-size: 16px;
   }
 }

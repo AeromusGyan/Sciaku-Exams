@@ -44,7 +44,7 @@ const routes: Routes = [
   {path:'privacy-policy', component:PrivacyPolicyComponent},
   {path:'courses', component:CoursesComponent},
   {path:'courses/course-details/:cid', component:CourseDetailComponent},
-  {path:'courses/course-lectures/:cid/:title/:id', component:CourseLectureComponent},
+  {path:'courses/course-lectures/:cid/:title/:id', component:CourseLectureComponent, canActivate:[UserGuard]},
   
   {path:'admin', component:DashboardComponent,canActivate:[AdminGuard],
   children:[

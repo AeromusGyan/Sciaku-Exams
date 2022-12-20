@@ -1,38 +1,55 @@
 .example-card {
   width: 100%;
-  padding: 20px;
-  margin-bottom: 10px;
 }
-  .content {
-    position: static;
-    bottom: 0;
-    /* background: rgba(0, 0, 0, 0.5); */
-    /* color: #f1f1f1; */
-    width: 100%;
-    padding: 20px;
+
+.content {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.Home_banner__WnS5R {
+  line-height: 2;
+  background-size: cover;
+  padding: 100px 0;
+  color: #e2e2e2;
+  background-image: linear-gradient(rgba(23, 23, 23, 0.7), rgba(21, 21, 21, 0.7)), url(./../../../assets/images/pexels-pixabay-270348.jpg);
+}
+.Home_banner__WnS5R h1 {
+  font-weight: 800!important;
+  font-size: 2.5rem;
+}
+
+.typed-cursor--blink{
+
+}
+span::before {
+  content: "Programming";
+  animation: animate infinite 3s  ;
+  padding-left: 10px;
+}
+
+@keyframes animate {
+
+  0% {
+      content: "Programming";
   }
+
+  50% {
+      content: "Coding";
+  }
+  
+  75% {
+      content: "Development";
+  }
+}
+
+@media screen and (max-width: 992px) {}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
   .example-card {
-    max-width: 470px;
+    width: 100%;
   }
-  
-  .example-header-image {
-    background-image: url('./../../../assets/images/Sciaku-1.jpg');
-    background-size: cover;
-  }
-  @media screen and (max-width: 992px) {
-    iframe {
-      width: 440px;
-      height: 300px;
-    }
-  }
-  
-  /* On screens that are 600px or less, set the background color to olive */
-  @media screen and (max-width: 600px) {
-    iframe {
-      width: 300px;
-      height: 200px;
-    }
-    .example-card {
-      max-width: 335px;
-    }
-  }
+}

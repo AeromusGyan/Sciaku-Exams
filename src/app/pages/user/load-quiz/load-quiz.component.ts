@@ -31,7 +31,7 @@ export class LoadQuizComponent implements OnInit {
         this.getQuizes();
       }
       else{
-        console.log('Load Specific Quiz');
+        // console.log('Load Specific Quiz');
         this.getQuizzesOfCategory();
       }
     })

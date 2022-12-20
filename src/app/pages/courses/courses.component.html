@@ -13,11 +13,9 @@
         <div class="container">
           <div class="row" *ngIf="loader">
               <div class="col-md-4 col-sm-12 course" *ngFor="let c of course;index as i">
-                  <mat-card class="example-card">
+                  <mat-card class="example-card card">
                       <mat-card-header>
-                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
-                        <mat-card-title>#{{i+1}} {{c.title}}</mat-card-title>
-                        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                        <mat-card-title class="c_title">#{{i+1}} {{c.title}}</mat-card-title>
                       </mat-card-header>
                       <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}" height="250px">
                       <mat-card-content>

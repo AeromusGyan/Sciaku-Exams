@@ -8,7 +8,7 @@
                         <mat-card-title>You have attempted the following quiz.</mat-card-title>
                     </mat-card-header>
                 </mat-card>
-                <mat-card class="mt20" *ngFor="let r of userResult">
+                <mat-card class="mt20 p20" *ngFor="let r of userResult">
                     <mat-card-header>
                         <mat-card-title>{{userResult[0].quiz.title}}</mat-card-title>
                         <mat-card-subtitle><em>Attemted Date: {{r.date | date:'MM-dd-yyyy, h:mm:ss a ' }}</em></mat-card-subtitle>

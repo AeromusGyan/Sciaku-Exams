@@ -6,6 +6,10 @@
 
 .m-auto{padding: auto;}
 
+.p10{padding: 10px;}
+
+.p20{padding: 20px;}
+
 .mt50{margin-top: 50px;}
 
 .mt20{margin-top: 20px;}
@@ -21,6 +25,7 @@
 .mb20{margin-bottom: 20px;}
 
 .mr20{margin-right: 20px;}
+
 .w100{width: 100%;}
 
 .text-left{text-align: left;}

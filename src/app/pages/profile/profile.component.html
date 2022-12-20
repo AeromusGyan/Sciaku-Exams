@@ -1,5 +1,5 @@
 
-<mat-card *ngIf="user">
+<mat-card class="p20" *ngIf="user">
     <!-- {{user|json}} -->
     <h1>Your Profile Detail</h1>
     <mat-card-content>
@@ -47,8 +47,10 @@
             </div>
         </div>
     </mat-card-content>
-    <mat-card-actions class="text-center">
+    <mat-card-actions>
+        <div class="text-center w100">   
         <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
-        <button mat-raised-button color="accent">SHARE</button>
+        <button mat-raised-button color="accent" class="ml10">SHARE</button>
+        </div>
       </mat-card-actions>
 </mat-card>
