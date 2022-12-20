@@ -58,7 +58,7 @@ export class ForgotPasswordComponent implements OnInit {
   sendEmailOtp() {
     this.spinner = true;
     this.otp = Math.floor(Math.random() * 999999);
-    console.log(this.otp);
+    // console.log(this.otp);
     
     // send otp
     this.mailObject.to = this.memberForm.value.email;

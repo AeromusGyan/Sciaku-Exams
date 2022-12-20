@@ -8,3 +8,11 @@ mat-form-field{
 img{
     margin-top: 20px;
 }
+.btns .row div button{
+    width: 100%;
+    margin-bottom: 10px;
+}
+mat-card h1{
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

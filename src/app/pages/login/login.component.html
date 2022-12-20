@@ -7,7 +7,7 @@
                     <div class="container text-center">
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" height="100px" alt="profile">
                     </div>
-                    <h1 class="text-center">Login here</h1>
+                    <h1 class="text-center text-uppercase">Login</h1>
     <!-- {{memberForm.value|json}} -->
                     <form [formGroup]="memberForm">
                         <mat-form-field class="w100" appearance="outline">
@@ -26,11 +26,18 @@
                             <mat-error>Password should be minimum 6 characters</mat-error>
                         </mat-form-field>
                         
-                        <div class="container text-center">
-                            <!-- [disabled]="!memberForm.valid" -->
-                            <button type="submit"  mat-raised-button color="primary" (click)="Submit()">Login</button>
-                            <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
-                            <button type="forgot" style="margin-left: 20px;" mat-raised-button color="primary" routerLink="/forgot">Forgot Password</button>
+                        <div class="container text-center btns">
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <button type="submit"  mat-raised-button color="primary" (click)="Submit()">Login</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="reset" mat-raised-button routerLink="/signup">Signup</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="forgot" mat-button  routerLink="/forgot">Forgot Password</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </mat-card>                
