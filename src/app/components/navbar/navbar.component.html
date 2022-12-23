@@ -16,30 +16,30 @@
         <span class="example-spacer"></span>
         <div class="row topnav" id="myTopnav">
           <div class="col-md-2 button">
-            <button class="mr20" mat-raised-button routerLink="/">Home</button>
+            <a class="mr20" mat-raised-button routerLink="/">Home</a>
           </div>
           <!-- <div class="col-md-2 button">
             <button mat-raised-button color="accent">Feature</button>
           </div> -->
           <div class="col-md-2 button">
-            <button class="mr20" mat-raised-button routerLink="/blogs">Blogs</button>
+            <a class="mr20" mat-raised-button routerLink="/blogs">Blogs</a>
           </div>
           <div class="col-md-2 button">
-            <button class="mr20" mat-raised-button routerLink="/courses">Courses</button>
+            <a class="mr20" mat-raised-button routerLink="/courses">Courses</a>
           </div>
           <div class="col-md-2 button">
-            <button class="mr20" mat-raised-button routerLink="/user/0">Quizzes</button>
+            <a class="mr20" mat-raised-button routerLink="/quizzes/quizzes/0">Quizzes</a>
           </div>
           <div *ngIf="isLoggedin" class="col-md-2 button">
-            <button class="mr20" class="mr20" mat-raised-button color="primary" class="example-icon" routerLink="/user/pan/profile">
-                {{this.login.getUser().username}} </button>
+            <a class="mr20" class="mr20" mat-raised-button color="primary" class="example-icon" routerLink="/profile">
+                {{this.login.getUser().username}} </a>
           </div>
           <div *ngIf="!isLoggedin" class="col-md-2 button">
-                <button class="mr20" routerLink="/login" mat-raised-button class="example-icon"
+                <a class="mr20" routerLink="/login" mat-raised-button class="example-icon"
                     aria-label="Example icon-button with login icon">
                     <mat-icon>login</mat-icon>
                     <span>Login</span>
-                </button>
+                </a>
           </div>
           <div *ngIf="isLoggedin" class="col-md-2 button">
             <a class="mr20" (click)="logout()" mat-raised-button class="example-icon"
@@ -49,11 +49,11 @@
             </a>
           </div>
           <div *ngIf="!isLoggedin" class="col-md-2 button">
-            <button class="mr20" class="mr20" routerLink="/signup" mat-raised-button class="example-icon"
+            <a class="mr20" class="mr20" routerLink="/signup" mat-raised-button class="example-icon"
                 aria-label="Example icon-button with app_registration icon">
                 <mat-icon>app_registration</mat-icon>
                 <span>Signup</span>
-            </button>
+            </a>
           </div>
           
         </div>

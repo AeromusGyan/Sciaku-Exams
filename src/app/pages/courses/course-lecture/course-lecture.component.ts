@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 import { environment } from 'src/environments/environment';
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class CourseLectureComponent {
 
+  thumb:any;
   videoId: any;
   height: any = 500;
   width: any = 950;
@@ -29,7 +31,7 @@ export class CourseLectureComponent {
   questions: any;
   cid: any;
 
-  constructor(private _courses: CoursesService, private _snackbar: MatSnackBar, private _route: ActivatedRoute, private _router: Router) { }
+  constructor(private _courses: CoursesService, private _snackbar: MatSnackBar, private _route: ActivatedRoute, private _router: Router, private _meta:Meta, private _title:Title) { }
 
   ngOnInit(): void {
     this.vid = this._route.snapshot.params['id'];
@@ -76,6 +78,17 @@ export class CourseLectureComponent {
     this._courses.getCourseVideoById(vid).subscribe(
       (data: any) => {
         this.course = data;
+        this.thumb = this.imgUrl +'/'+ this.course.thumbnail;
+
+        this._title.setTitle(this.course.v_title);
+        this._meta.updateTag({property:'og:title', content: this.course.v_title});
+        this._meta.updateTag({name:'description',content: this.course.courses.description});
+        this._meta.updateTag({property:'og:description',content: this.course.courses.description});
+        this._meta.updateTag({name:'image', content: this.thumb});     
+        this._meta.updateTag({property:'og:image', content: this.thumb});      
+        this._meta.updateTag({property:'og:url', content: window.document.location.href});
+        this._meta.updateTag({name:'keywords',content:'top free courses, courses'});  
+
         this.videoId = this.course.url;
         this.spinner = true;
         if (this.course.length == 0 || this.course == undefined) {
@@ -85,7 +98,7 @@ export class CourseLectureComponent {
 
   }
   onVideo(title: any, vId: any, index: any) {
-    this._router.navigate(['/course/' + title + "/" + vId]);
+    this._router.navigate(['/courses/course-lectures/'+ this.cid + '/' + title + "/" + vId]);
     this.getCourseById(vId);
     // console.log(vId);
     // this.onActive(index);  

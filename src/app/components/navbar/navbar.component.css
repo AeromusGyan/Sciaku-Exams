@@ -78,7 +78,7 @@ background-color: #ddd;
     margin-bottom: 10px;
     text-align: center;
   }
-  .topnav.responsive .button button{
+  .topnav.responsive .button a{
     width: 100%;
   }
   

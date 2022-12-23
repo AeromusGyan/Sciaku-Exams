@@ -7,23 +7,23 @@
             <mat-icon>menu</mat-icon>Menu
         </button>
         <div matCardContent *ngIf="!menu">
-            <button mat-list-item routerLink="/user/0">
+            <a mat-list-item routerLink="/quizzes/quizzes/0">
                 <mat-icon mat-list-icon>home</mat-icon>Home
-            </button>
-            <button mat-list-item routerLink="/user/pan/attempted">
+            </a>
+            <a mat-list-item routerLink="/quizzes/pan/results/attempted">
                 <mat-icon mat-list-icon>quiz</mat-icon>Quiz Attempts
-            </button>
-            <button mat-list-item routerLink="/user/pan/profile">
+            </a>
+            <a mat-list-item routerLink="/profile">
                 <mat-icon mat-list-icon>account_circle</mat-icon>Profile
-            </button>
+            </a>
             <!-- <button mat-list-item routerLink="/user/all-quizzes"><mat-icon mat-list-icon>account_circle</mat-icon>All Quizzes</button> -->
-
-            <button mat-list-item *ngFor="let c of category" routerLink="/user/{{c.cid}}">
+<!-- {{category|json}} -->
+            <a mat-list-item *ngFor="let c of category" routerLink="/quizzes/{{c.title}}/{{c.cid}}">
                 <mat-icon mat-list-icon>category</mat-icon>{{c.title}}
-            </button>
-            <button (click)="logout()" mat-list-item routerLink="/">
+            </a>
+            <a (click)="logout()" mat-list-item routerLink="/">
                 <mat-icon mat-list-icon>logout</mat-icon>Logout
-            </button>
+            </a>
         </div>
     </mat-action-list>
 </mat-card>

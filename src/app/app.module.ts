@@ -47,6 +47,7 @@ import { AllCoursesComponent } from './pages/admin/courses/all-courses/all-cours
 import { AllCourseVideosComponent } from './pages/admin/courses/all-course-videos/all-course-videos.component';
 import { UpdateCourseVideoComponent } from './pages/admin/courses/update-course-video/update-course-video.component';
 import { UpdateCoursesComponent } from './pages/admin/courses/update-courses/update-courses.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { UpdateCoursesComponent } from './pages/admin/courses/update-courses/upd
     UpdateQuestionComponent,UserSidebarComponent,UserWelcomeComponent,LoadQuizComponent,UserProfileComponent,
     InstructionsComponent,QuizStartComponent,AttemptedComponent,UsersDetailComponent,
     ForgotPasswordComponent,
-    AddCourseVideosComponent,AddCoursesComponent,LoginComponent, AllCoursesComponent, AllCourseVideosComponent, UpdateCourseVideoComponent, UpdateCoursesComponent
+    AddCourseVideosComponent,AddCoursesComponent,LoginComponent, AllCoursesComponent, AllCourseVideosComponent, UpdateCourseVideoComponent, UpdateCoursesComponent, Page404Component
   ],
   imports: [
     BrowserModule,

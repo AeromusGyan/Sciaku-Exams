@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-  hide =true;
+  nhide =true;
+  chide =true;
   constructor(private login: LoginService, private _snackBar: MatSnackBar, private router: Router, private mailApi: CategoryService, private userApi: MemberService) { }
   durationInSeconds: any = 3;
   otpEnable = false;
@@ -25,13 +26,13 @@ export class ForgotPasswordComponent implements OnInit {
   };
   user:any = {};
   memberForm = new UntypedFormGroup({
-    email: new UntypedFormControl('', Validators.required),
+    email: new UntypedFormControl('', [Validators.required, Validators.email]),
     otp: new UntypedFormControl('', Validators.required),
   });
 
   forgotPassword = new UntypedFormGroup({
-    npassword: new UntypedFormControl('', Validators.required),
-    cpassword: new UntypedFormControl('', Validators.required),
+    npassword: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
+    cpassword: new UntypedFormControl('',[Validators.required, Validators.minLength(6)]),
   });
 
   mailObject: any = {
@@ -52,6 +53,7 @@ export class ForgotPasswordComponent implements OnInit {
       });
     } else {
       this.getUserData();
+      Swal.fire('Email is Verified', 'Otp is sent check your mail Inbox or Spam folder!', 'info');
     }
   }
 

@@ -13,10 +13,12 @@ export class InstructionsComponent implements OnInit {
   constructor(private _route:ActivatedRoute, private _quiz:CategoryService,private _router:Router) { }
 
   qid:any;
+  qtitle:any;
   quizData:any=[];
 
   ngOnInit(): void {
     this.qid = this._route.snapshot.params['qid'];
+    this.qtitle = this._route.snapshot.params['qtitle'];
     // alert(this.qid)
     this.getQuiz();
   }
@@ -42,7 +44,7 @@ export class InstructionsComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        this._router.navigate(['/start/'+this.qid]);
+        this._router.navigate(['/quiz/start/' + this.quizData.title + '/' + this.qid]);
       } else if (result.isDenied) {
         
       }

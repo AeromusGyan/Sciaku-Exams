@@ -23,8 +23,8 @@
                         <p class="truncate"> {{q.description}}</p>
                     </mat-card-content>
                     <mat-card-action>
-                        <button mat-raised-button color="primary" [routerLink]="'/user/instructins/'+q.qid">View</button>
-                        <button mat-stroked-button color="accent" [routerLink]="'/user/instructins/'+q.qid" style="margin-left: 10px;">Start</button>
+                        <a mat-raised-button color="primary" [routerLink]="'/quizzes/instructins/' + q.title + '/' +q.qid">View</a>
+                        <a mat-stroked-button color="accent" [routerLink]="'/quizzes/instructins/' + q.title + '/' +q.qid" style="margin-left: 10px;">Start</a>
                         <button mat-button color="accent">Questions:{{q.noOfQuestions}}</button>
                         <button mat-button color="accent">M.M:{{q.maxMarks}}</button>
                     </mat-card-action>

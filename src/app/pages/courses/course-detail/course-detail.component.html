@@ -13,8 +13,8 @@
                     <h1 class="top">{{course[0].courses.title}}</h1>
                     <p class="text-muted">{{course[0].courses.description}}</p>
                     <div class="container">
-                        <button mat-raised-button color="primary"
-                            routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{course[0].v_title}}/{{course[0].vId}}">Start Course</button>
+                        <a mat-raised-button color="primary"
+                            routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{course[0].v_title}}/{{course[0].vId}}">Start Course</a>
                     </div>
                 </div>
             </div>
@@ -34,8 +34,8 @@
                             </mat-card-header>
                             <p class="truncate" [innerHTML]="c.v_description"></p>
                             <mat-card-actions>
-                                <button mat-raised-button color="warn" routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{c.v_title}}/{{c.vId}}">Watch
-                                    Video</button>
+                                <a mat-raised-button color="warn" routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{c.v_title}}/{{c.vId}}">Watch
+                                    Video</a>
                                 <button mat-button color="accent">LIKE</button>
                                 <button mat-button color="primary">SHARE</button>
                             </mat-card-actions>

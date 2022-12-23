@@ -26,6 +26,7 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { Page404Component } from './pages/page404/page404.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AttemptedComponent } from './pages/user/attempted/attempted.component';
@@ -36,15 +37,15 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent,pathMatch:'full'},
-  {path:'home', component:HomeComponent,pathMatch:'full'},
-  {path:'signup', component:SignupComponent,pathMatch:'full'},
-  {path:'login', component:LoginComponent,pathMatch:'full'},
-  {path:'forgot', component:ForgotPasswordComponent,pathMatch:'full'},
-  {path:'privacy-policy', component:PrivacyPolicyComponent},
-  {path:'courses', component:CoursesComponent},
-  {path:'courses/course-details/:cid', component:CourseDetailComponent},
+  {path:'', component:HomeComponent, pathMatch:'full'},
+  {path:'signup', component:SignupComponent, pathMatch:'full'},
+  {path:'login', component:LoginComponent, pathMatch:'full'},
+  {path:'forgot', component:ForgotPasswordComponent, pathMatch:'full'},
+  {path:'privacy-policy', component:PrivacyPolicyComponent, pathMatch:'full'},
+  {path:'courses', component:CoursesComponent, pathMatch:'full'},
+  {path:'courses/course-details/:title/:cid', component:CourseDetailComponent, pathMatch:'full'},
   {path:'courses/course-lectures/:cid/:title/:id', component:CourseLectureComponent, canActivate:[UserGuard]},
+  {path:'profile', component:ProfileComponent, canActivate:[UserGuard]},
   
   {path:'admin', component:DashboardComponent,canActivate:[AdminGuard],
   children:[
@@ -67,18 +68,18 @@ const routes: Routes = [
     {path:'update-courses/:cid',component:UpdateCoursesComponent}
   ]},
 
-  {path:'user', component:UserDashboardComponent, canActivate:[UserGuard],
+  {path:'quizzes', component:UserDashboardComponent, canActivate:[UserGuard],
   children:[
     {path:'', component:UserWelcomeComponent},
-    {path:':catId', component:LoadQuizComponent},
-    {path:'pan/profile', component:ProfileComponent},
-    {path:'instructins/:qid', component:InstructionsComponent},
-    {path:'pan/attempted', component:AttemptedComponent}
+    {path:':title/:catId', component:LoadQuizComponent},
+    {path:'instructins/:quiz/:qid', component:InstructionsComponent},
+    {path:'pan/results/attempted', component:AttemptedComponent}
     
     // {path:'profile', component:UserProfileComponent},
   ]
 },
-  {path:'start/:qid', component:QuizStartComponent, canActivate:[UserGuard]},
+  {path:'quiz/start/:qtitle/:qid', component:QuizStartComponent, canActivate:[UserGuard]},
+  {path:'**', component:Page404Component, data:{'title':'404 page'}},
 
 ];
 

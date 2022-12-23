@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>https://sciaku.com/</loc>
+        <lastmod>2022-09-15T15:08:10+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses</loc>
+        <lastmod>2022-12-16T15:08:10+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-details/Android%20App%20Development%20With%20Kotlin%20Live%20Class/169</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <lastmod>2022-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-details/C%20Programming%20Course%20Basic%20To%20Advance%20Level/170</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <lastmod>2022-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-details/Python%20Basics%20Full%20Foundation%20Course/171</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <lastmod>2022-12-23</lastmod>
+    </url>
+</urlset>

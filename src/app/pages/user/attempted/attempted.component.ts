@@ -29,7 +29,7 @@ export class AttemptedComponent implements OnInit {
         this.question.getResultByMember(this.user.id).subscribe(
           (data:any)=>{
             this.userResult = data;
-            console.log(this.userResult);
+            // console.log(this.userResult);
           }
         )
       },

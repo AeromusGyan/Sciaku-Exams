@@ -1,8 +1,9 @@
 <!-- {{quesData|json}} -->
-<div *ngIf="quesData.length>0">
-  <div class="bootstrap-wrapper" *ngIf="!isSubmit" (contextmenu)="onRightClick()">
+<div *ngIf="quesData.length>0" (contextmenu)="onRightClick()">
+<section>
+  <div class="bootstrap-wrapper">
     <div class="conatainer-fluid">
-      <div class="row">
+      <div class="row"  *ngIf="!isSubmit">
         <div class="col-md-2">
           <mat-card style="margin-top:70px;">
             <mat-card-header>
@@ -57,7 +58,7 @@
                       </div>
                     </mat-card> -->
           <!-- {{quesData[0].quiz.title|json}} -->
-          <div *ngIf="quesData" class="mt20 ml20">
+          <div *ngIf="quesData" class="mt20">
             <h1>On going quiz <strong>{{quesData[0].quiz.title}}</strong></h1>
           </div>
           <mat-card *ngFor="let q of quesData; let i = index" class="mt10">
@@ -123,7 +124,9 @@
       </div>
     </div>
   </div>
+</section>
 
+<section>
   <div class="bootstrap-wrapper" *ngIf="isSubmit">
     <!-- {{user|json}}<br>
     {{quesData|json}} -->
@@ -135,7 +138,7 @@
               <mat-card-title>Quiz Result</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <table mat-table class="mat-elevation-z8">
+              <table mat-table class="mat-elevation-z8 p20">
                 <ng-container>
                   <td>
                     <h3>Name: </h3>
@@ -203,26 +206,31 @@
               </table>
             </mat-card-content>
             <mat-card-actions class="text-center">
-              <button mat-raised-button color="primary" (click)="printPage()">Print</button>
-              <button mat-raised-button color="accent" [routerLink]="'/user/0'">Home</button>
+              <div class="text-center w100">
+                <button mat-raised-button color="primary" (click)="printPage()">Print</button>
+                <button class="ml20" mat-raised-button color="accent" [routerLink]="'/quizzes/quizzes/0'">Home</button>
+              </div>
             </mat-card-actions>
           </mat-card>
         </div>
       </div>
     </div>
   </div>
+</section>
 </div>
 
-<div class="bootstrap-wrapper">
-  <div class="container">
-    <div class="row">
-      <div *ngIf="quesData.length<=0" class="col-md-12">
-        <mat-card class="mt20">
-          <mat-card-header>
-            <mat-card-title>Not any questions available in this quiz.</mat-card-title>
-          </mat-card-header>
-        </mat-card>
+<section>
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div *ngIf="quesData.length<=0" class="col-md-12">
+          <mat-card class="mt20">
+            <mat-card-header>
+              <mat-card-title>Not any questions available in this quiz.</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

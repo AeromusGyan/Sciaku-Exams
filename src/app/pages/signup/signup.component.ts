@@ -17,11 +17,11 @@ export class SignupComponent implements OnInit {
   hide = true;
   memberForm = new FormGroup({
     username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     firstname: new FormControl('', Validators.required),
     lastname: new FormControl(''),
-    email: new FormControl('', Validators.required),
-    contact: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    contact: new FormControl('', [Validators.required, Validators.minLength(10)]),
     city: new FormControl(''),
 
   })

@@ -22,7 +22,7 @@
                         <p class="truncate">{{c.description}}</p>
                       </mat-card-content>
                       <mat-card-actions>
-                          <button mat-raised-button color="warn" routerLink="/courses/course-details/{{c.cId}}">Start Learning</button>
+                          <a mat-raised-button color="warn" routerLink="/courses/course-details/{{c.title}}/{{c.cId}}">Start Learning</a>
                         <button mat-button color="accent">LIKE</button>
                         <button mat-button color="primary">SHARE</button>
                       </mat-card-actions>

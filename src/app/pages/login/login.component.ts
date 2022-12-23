@@ -16,8 +16,8 @@ export class LoginComponent {
   durationInSeconds: any = 3;
   constructor(private login: LoginService, private _snackBar: MatSnackBar, private router: Router) { }
   memberForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
 
   ngOnInit(): void {
@@ -69,7 +69,7 @@ export class LoginComponent {
               }
               else if (this.login.getUserRole() == "NORMAL") {
                 // User dashboard
-                Swal.fire('You are Logged in !!', 'User role is ' + this.login.getUserRole(), 'success');
+                Swal.fire('You are Logged in !!', 'success');
                 setTimeout(() => {
                   window.location.href='/';
                   // this.router.navigate(["courses"]);

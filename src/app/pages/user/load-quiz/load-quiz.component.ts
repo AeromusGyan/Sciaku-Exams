@@ -24,12 +24,13 @@ export class LoadQuizComponent implements OnInit {
     this._meta.updateTag({name:'description',content:'This is a quiz website. here are many quiz categories is given. you can attempt quiz by your category wise & you can download your result in pdf - Sciaku.com'});
     
     this._route.params.subscribe((params)=>{
-      // console.log(params)
       this.catId = params['catId'];
       this.title = params['title'];
+      console.log(this.catId)
       if(this.catId == 0){
         this.getQuizes();
       }
+      
       else{
         // console.log('Load Specific Quiz');
         this.getQuizzesOfCategory();
@@ -56,7 +57,7 @@ export class LoadQuizComponent implements OnInit {
         // console.log(this.quizData)
       },
       (error)=>{
-        alert("Error in loading quiz data!!"+ error)
+        alert("Error in loading quiz data!!")
       }
     )
   }

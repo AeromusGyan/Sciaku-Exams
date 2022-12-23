@@ -1,5 +1,6 @@
+import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,9 +8,16 @@ import { environment } from 'src/environments/environment';
 })
 export class CoursesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(@Inject(DOCUMENT) private doc:any, private http:HttpClient) { }
   
   private baseUrl:string = environment.baseUrl;
+
+  createLinkForCanonicalURL() {
+    let link: HTMLLinkElement = this.doc.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    this.doc.head.appendChild(link);
+    link.setAttribute('href', this.doc.URL);
+  }
 
   addCourses(course:any){
     return this.http.post(`${this.baseUrl}/course/`,course);

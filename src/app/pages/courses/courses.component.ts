@@ -27,6 +27,7 @@ export class CoursesComponent {
     this._meta.updateTag({name:'keywords',content:this.keyword});
     this._meta.updateTag({name:'description',content:'Top Free Courses Sciaku ia a Learning platform for Engineering Students'});
     
+    
     this.getAllCourses();
     // console.log(this.course.length);
   }
