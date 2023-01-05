@@ -1,46 +1,46 @@
 <section>
-<div class="bootstrap-wrapper">
-  <div class="container-fluid">
-      <mat-card class="mt20">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                    <h1 class="top">Top Free Courses</h1>
-                    <mat-divider></mat-divider>
-            </div>
-            <mat-divider></mat-divider>
-        </div>
-        <!-- {{course|json}} -->
-        <div class="container">
-          <div class="row" *ngIf="loader">
-              <div class="col-md-4 col-sm-12 course" *ngFor="let c of course;index as i">
-                  <mat-card class="example-card card">
-                      <mat-card-header>
-                        <mat-card-title class="c_title">#{{i+1}} {{c.title}}</mat-card-title>
-                      </mat-card-header>
-                      <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}" height="250px">
-                      <mat-card-content>
-                        <p class="truncate">{{c.description}}</p>
-                      </mat-card-content>
-                      <mat-card-actions>
-                          <a mat-raised-button color="warn" routerLink="/courses/course-details/{{c.title}}/{{c.cId}}">Start Learning</a>
-                        <button mat-button color="accent">LIKE</button>
-                        <button mat-button color="primary">SHARE</button>
-                      </mat-card-actions>
-                    </mat-card>
-              </div>
-
-          </div></div>
+  <div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <mat-card class="mt20">
           <div class="row">
-            <div class="col-md-12" *ngIf="!loader">
-              <mat-card>
-                <h1 class="text-center">Courses are not found!!</h1>
-              </mat-card>
-            </div>
-            <div class="col-md-12" *ngIf="!spinner">
-              <!-- <mat-spinner></mat-spinner> -->
-            </div>
+              <div class="col-md-12 text-center">
+                      <h1 class="top">Top Free Courses</h1>
+                      <mat-divider></mat-divider>
+              </div>
+              <mat-divider></mat-divider>
           </div>
-      </mat-card>
+          <!-- {{course|json}} -->
+          <div class="container">
+            <div class="row" *ngIf="loader">
+                <div class="col-md-4 col-sm-12 course" *ngFor="let c of courses;index as i">
+                    <mat-card class="example-card card">
+                        <mat-card-header>
+                          <mat-card-title class="c_title">#{{i+1}} {{c.title}}</mat-card-title>
+                        </mat-card-header>
+                        <img mat-card-image src="{{imgUrl + 'courses/' + c.thumbnail}}" alt="{{c.thumbnail}}" height="180px">
+                        <mat-card-content>
+                          <p class="truncate">{{c.description}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <a mat-raised-button color="primary" routerLink="/courses/course-details/{{c.url}}/{{c.cId}}">Start Learning</a>
+                          <!-- <button mat-button color="accent">LIKE</button>
+                          <button mat-button color="primary">SHARE</button> -->
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+  
+            </div></div>
+            <div class="row">
+              <div class="col-md-12" *ngIf="!loader">
+                <mat-card>
+                  <h1 class="text-center">Courses are not found!!</h1>
+                </mat-card>
+              </div>
+              <div class="col-md-12" *ngIf="!spinner">
+                <!-- <mat-spinner></mat-spinner> -->
+              </div>
+            </div>
+        </mat-card>
+    </div>
   </div>
-</div>
-</section>
+  </section>

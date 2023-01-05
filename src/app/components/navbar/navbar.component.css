@@ -4,6 +4,7 @@
 
 .logo {
   cursor: pointer;
+  height: 70px;
 }
 
 .mat-toolbar-single-row {
@@ -13,9 +14,7 @@
 .topnav {
   overflow: hidden;
 }
-.mat-toolbar-single-row {
-  padding: 40px 16px;
-}
+
 /* .topnav a {
   float: left;
   display: block;
@@ -45,7 +44,7 @@ background-color: #ddd;
   }
    .menu .icon {
     /* float: right; */
-    position: fixed;
+    position: absolute;
     right: 10px;
     top:25px;
     display: block;
@@ -83,4 +82,3 @@ background-color: #ddd;
   }
   
 }
-

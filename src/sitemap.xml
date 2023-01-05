@@ -1,462 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sciaku.com/</loc>
-    <lastmod>2022-09-15T15:08:10+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2022-09-15</lastmod>
   </url>
   <url>
     <loc>https://sciaku.com/quizzes/quizzes/0</loc>
-    <lastmod>2022-09-15T15:08:10+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
+    <lastmod>2022-12-23</lastmod>
   </url>
   <url>
     <loc>https://sciaku.com/courses</loc>
-    <lastmod>2022-12-16T15:08:10+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
+    <lastmod>2022-12-23</lastmod>
   </url>
   <url>
     <loc>https://sciaku.com/login</loc>
-    <lastmod>2022-12-16T15:08:10+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
+    <lastmod>2022-12-23</lastmod>
   </url>
   <url>
     <loc>https://sciaku.com/signup</loc>
-    <lastmod>2022-12-16T15:08:10+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sciaku.com/forget</loc>
-    <lastmod>2022-12-16T15:08:10+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
+    <loc>https://sciaku.com/forgot</loc>
+    <lastmod>2022-12-23</lastmod>
   </url>
-</url>
-<url>
-  <loc>https://sciaku.com/quizzes/pan/results/attempted</loc>
-  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/profile</loc>
-  <lastmod>2022-09-15T15:08:10+00:00</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-details/Android%20App%20Development%20With%20Kotlin%20Live%20Class/169</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-details/C%20Programming%20Course%20Basic%20To%20Advance%20Level/170</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-details/Python%20Basics%20Full%20Foundation%20Course/171</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/173</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/174</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/175</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/176</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/177</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/178</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/179</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/180</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/181</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/182</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class%20/183</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/%20Hardware%20Background%20Get%20Started%20with%20C%20Language/184</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Computer%20Organization%20Get%20Started%20with%20C%20Language%20%28GFG%29/185</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Why%20Do%20We%20Need%20Programming%20Languages%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/186</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/%20C%20Introduction%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/187</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/C%20Standards%20and%20Implementation%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/188</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Basic%20C%20Programming%20terminology%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/189</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/How%20do%20C%20Programs%20Run?%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/190</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/First%20C%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/191</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/192</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/193</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Variable%20naming%20rules%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/194</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Data%20types%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/195</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Ranges%20of%20Data%20Types%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/196</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/sizeof%28%20%29%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/197</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Global%20Variables%20and%20Scope%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/198</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Const%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/201</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Static%20Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/202</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Literals%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/203</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Type%20Conversion%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/204</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Swap%20Two%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/205</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Input%20and%20Output%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/206</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/scanf%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/207</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/scanf%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/208</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/fgets%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/209</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Format%20specifier%20for%20Integers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/210</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Format%20Specifiers%20for%20floating%20point%20number%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/211</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Other%20format%20specifiers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/212</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Width%20and%20Precision%20in%20printf%28%29%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/213</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/A%20Buffering%20Example%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/214</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Escape%20Sequence%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/215</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/%20Arithmetic%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/216</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Unary%20Arithmetic%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/217</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Comparison%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/218</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Assignment%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/219</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Logical%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/220</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Bitwise%20Operator%20in%20C%20%28AND,%20OR%20and%20XOR%29%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/221</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Bitwise%20Operator%20in%20C%20%28Left%20shift,%20Right%20Shift%20and%20NOT%29%20%20Get%20Started%20with%20C%20Language%5BGFG%5D/222</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Signed%20number%20Representation%20and%20Bitwise%20NOT%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/223</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Operator%20Precedence%20&amp;%20Associativity%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/224</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Day%20Before%20N%20Days%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/225</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Sum%20of%20Natural%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/226</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Last%20Digit%20of%20%20a%20Number%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/227</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Practice%20Problem%20on%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/228</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/If%20Else%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/229</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Even%20Odd%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/230</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/%20Else%20if%20with%20example%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/231</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Nested%20If%20Else%20with%20Example%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/232</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Switch%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/233</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Even%20Odd%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/234</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Largest%20of%20Three%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/235</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/170/Leap%20Year%20Program%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/236</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/171/Background%20Part%201%20%28IO%20Devices,%20CPU%20and%20Memory%29%20Python%20Foundation%20%5BGFG%5D/237</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
-<url>
-  <loc>https://sciaku.com/courses/course-lectures/171/Background%20Part%202%20%28Computer%20Organization%20&amp;%20Operating%20System%29%20Python%20Foundation%5BGFG%5D/238</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <lastmod>2022-12-23</lastmod>
-</url>
+  <url>
+    <loc>https://sciaku.com/quizzes/pan/results/attempted</loc>
+    <lastmod>2022-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://sciaku.com/profile</loc>
+    <lastmod>2022-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://sciaku.com/courses/course-details/Android%20App%20Development%20With%20Kotlin%20Live%20Class/169</loc>
+    <lastmod>2022-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://sciaku.com/courses/course-details/C%20Programming%20Course%20Basic%20To%20Advance%20Level/170</loc>
+    <lastmod>2022-12-23</lastmod>
+  </url>
+  <url>
+    <loc>https://sciaku.com/courses/course-details/Python%20Basics%20Full%20Foundation%20Course/171</loc>
+    <lastmod>2022-12-23</lastmod>
+  </url>
+  <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/172</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/173</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/174</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/175</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/176</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/177</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/178</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/179</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/180</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/181</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class/182</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/169/Android%20App%20Development%20With%20Kotlin%20Live%20Class%20/183</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/%20Hardware%20Background%20Get%20Started%20with%20C%20Language/184</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Computer%20Organization%20Get%20Started%20with%20C%20Language%20%28GFG%29/185</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Why%20Do%20We%20Need%20Programming%20Languages%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/186</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/%20C%20Introduction%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/187</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/C%20Standards%20and%20Implementation%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/188</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Basic%20C%20Programming%20terminology%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/189</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/How%20do%20C%20Programs%20Run?%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/190</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/First%20C%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/191</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/192</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/193</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Variable%20naming%20rules%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/194</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Data%20types%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/195</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Ranges%20of%20Data%20Types%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/196</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/sizeof%28%20%29%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/197</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Global%20Variables%20and%20Scope%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/198</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Const%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/201</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Static%20Variables%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/202</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Literals%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/203</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Type%20Conversion%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/204</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Swap%20Two%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/205</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Input%20and%20Output%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/206</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/scanf%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/207</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/scanf%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/208</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/fgets%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/209</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Format%20specifier%20for%20Integers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/210</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Format%20Specifiers%20for%20floating%20point%20number%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/211</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Other%20format%20specifiers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/212</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Width%20and%20Precision%20in%20printf%28%29%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/213</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/A%20Buffering%20Example%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/214</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Escape%20Sequence%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/215</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/%20Arithmetic%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/216</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Unary%20Arithmetic%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/217</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Comparison%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/218</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Assignment%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/219</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Logical%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/220</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Bitwise%20Operator%20in%20C%20%28AND,%20OR%20and%20XOR%29%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/221</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Bitwise%20Operator%20in%20C%20%28Left%20shift,%20Right%20Shift%20and%20NOT%29%20%20Get%20Started%20with%20C%20Language%5BGFG%5D/222</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Signed%20number%20Representation%20and%20Bitwise%20NOT%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/223</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Operator%20Precedence%20&amp;%20Associativity%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/224</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Day%20Before%20N%20Days%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/225</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Sum%20of%20Natural%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/226</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Last%20Digit%20of%20%20a%20Number%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/227</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Practice%20Problem%20on%20Operators%20Get%20Started%20with%20C%20Language%20%5BGFG%5D%20/228</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/If%20Else%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/229</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Even%20Odd%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/230</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/%20Else%20if%20with%20example%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/231</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Nested%20If%20Else%20with%20Example%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/232</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Switch%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/233</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Even%20Odd%20Program%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/234</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Largest%20of%20Three%20Numbers%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/235</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Leap%20Year%20Program%20in%20C%20Get%20Started%20with%20C%20Language%20%5BGFG%5D/236</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/171/Background%20Part%201%20%28IO%20Devices,%20CPU%20and%20Memory%29%20Python%20Foundation%20%5BGFG%5D/237</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/171/Background%20Part%202%20%28Computer%20Organization%20&amp;%20Operating%20System%29%20Python%20Foundation%5BGFG%5D/238</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Simple%20Calculator%20Get%20Started%20with%20C%20Language/243</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Functions%20in%20C%20Get%20Started%20with%20C%20Language/244</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Applications%20of%20Functions%20Get%20Started%20with%20C%20Language/245</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Function%20Declaration%20&amp;%20Definition%20Get%20Started%20with%20C%20Language/246</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/How%20Functions%20Work%20Get%20Started%20with%20C%20Language/247</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/InIine%20Function%20%20Get%20Started%20with%20C%20Language/248</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Practice%20Problems%20on%20C%20Functions%20Get%20Started%20with%20C%20Language/249</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Recursion%20Practice%20Questions%20Get%20Started%20with%20C%20Language/250</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/First%20Digit%20of%20a%20Number%20Get%20Started%20with%20C%20Language/251</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Prime%20Factorization%20with%20C%20Language/252</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/While%20Loop%20in%20C%20Language/253</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/For%20Loop%20in%20C%20Language/254</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Do%20While%20Loop%20in%20C%20Language/255</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Break%20in%20C%20Language/256</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Continue%20in%20C%20Language/257</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Nested%20Loops%20in%20C%20Language/258</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Patterns%20in%20C%20Language/259</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Square%20Pattern%20in%20C%20Language/260</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Triangle%20Pattern%20in%20C%20Language/261</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Inverted%20Triangle%20Pattern%20in%20C%20Language/262</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Factor%20of%20Number%20in%20C%20Language/263</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Check%20for%20Prime%20in%20C%20Language/264</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Next%20Prime%20Number%20in%20C%20Language/265</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/All%20Divisor%20of%20a%20Number%20in%20C%20Language/266</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/GCD%20of%20Two%20Numbers%20in%20C%20Language/267</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/LCM%20of%20Two%20Numbers%20in%20C%20Language/268</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Fibonacci%20Numbers%20in%20C%20Language/269</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Count%20Digits%20of%20a%20Number%20in%20C%20Language/270</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Table%20of%20a%20Number%20in%20C%20Language/271</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Introduction%20to%20Arrays%20in%20C%20Language/272</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
+    <url>
+        <loc>https://sciaku.com/courses/course-lectures/170/Declaring%20and%20Initializing%20Arrays%20in%20C%20Language/273</loc>
+        <lastmod>2022-12-25</lastmod>
+    </url>
 </urlset>

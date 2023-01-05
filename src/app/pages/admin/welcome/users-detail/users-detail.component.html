@@ -1,10 +1,11 @@
 
 <!-- {{allmember|json}} -->
 <mat-card class="mt20">
-    <table mat-table class="mat-elevation-z8 " width="100%">
+    <table mat-table class="mat-elevation-z8 ">
         <tr>
             <td width="5%"><strong>#</strong></td>
             <th width="15%"><strong>Name</strong></th>
+            <th width="15%"><strong>Username</strong></th>
             <th width="15%"><strong>Email</strong></th>
             <th width="15%"><strong>Contact</strong></th>
             <th width="15%"><strong>Status</strong></th>
@@ -13,10 +14,18 @@
         <tr *ngFor="let u of allmember; index as i">
             <td width="5%"><strong>{{i+1}}</strong></td>
             <td width="15%">{{u.firstname}} {{u.lastname}}</td>
+            <td width="15%">{{u.username}}</td>
             <td width="15%">{{u.email}}</td>
             <td width="15%">{{u.contact}}</td>
-            <th width="15%">{{u.status}}</th>
-            <td width="15%"><button mat-button color="primary">Edit</button> <button mat-button color="accent">Delete</button></td>
+            <th width="15%">
+                    <mat-slide-toggle class="example-margin" [color]="color"
+                    [checked]="checked" [(ngModel)]="u.status">
+                </mat-slide-toggle>
+            </th>
+            <td width="15%">
+                <button mat-mini-fab color="primary"  (click)="openDialog()"><mat-icon>edit</mat-icon></button>
+                <button mat-mini-fab color="warn" (click)="onDelete(u.id)"><mat-icon>delete</mat-icon></button>
+            </td>
         </tr>
     </table>
 </mat-card>

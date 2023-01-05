@@ -4,46 +4,50 @@
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form [formGroup]="courseVideoForm" (ngSubmit)="Addbtn()">
+                    <form #courseForm="ngForm" (ngSubmit)="updateCourseVideo(courseForm)">
                         <div class="row">
                             <div class="col-md-12">
-                            <!-- <input [hidden]="true" type="text" name="vId" matInput formControlName="vId" [(ngModel)]="qId"> -->
                                 <mat-form-field class="w100" appearance="fill">
                                     <mat-label>Title</mat-label>
-                                    <input autofocus type="text" name="title" matInput formControlName="v_title"
-                                    [(ngModel)]="course.v_title" placeholder="Enter here">
+                                    <input autofocus type="text" name="title" matInput [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="courseVideoForm.v_title" placeholder="Enter here">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-12">
                                 <mat-label>Description</mat-label>
                                 <ckeditor autofocus tagName="textarea" [editor]="Editor"
                                     name="v_description"
-                                    formControlName="v_description" [(ngModel)]="course.v_description" rows="5"></ckeditor>
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="courseVideoForm.v_description" rows="5"></ckeditor>
                             </div>
                         <div class="col-md-12 mt20">
                             <mat-form-field class="w100" appearance="fill">
                                 <mat-label>Video URL</mat-label>
-                                <input type="text" name="url" matInput formControlName="url" [(ngModel)]="course.url" placeholder="Enter here">
+                                <input type="text" name="url" matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="courseVideoForm.url" placeholder="Enter here">
                             </mat-form-field>
                         </div>
                         <div class="col-md-12">
                             <mat-label>Thumbnail</mat-label>
-                            <input (change)="onFileSelected($event)" value="select" type="file"/>
+                                <div *ngIf="imgUpload">
+                                    <label class="upload"><img [src]="imgUpload" alt=""></label>
+                                </div>
+                                <div>
+                                    <label for="image" class="upload"><img src="./../../../assets/images/sciaku-upload.png" alt=""><span>Browse image</span></label>
+                                    <input id="image" multiple type="file" value="select" #selectFile (change)="onFileSelected($event)">
+                                    <div *ngIf="currentFile" class="progress">
+                                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                                            attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"
+                                            [ngStyle]="{ width: progress + '%' }">
+                                            {{ progress }}%
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-light" role="alert">{{ message }}</div>
+                                </div>
                         </div>
                         <div class="col-md-6 mt20">
-                            <mat-slide-toggle formControlName="status" class="example-margin" [color]="color"
-                                [checked]="checked" [(ngModel)]="course.status">
+                            <mat-slide-toggle [ngModelOptions]="{standalone: true}" class="example-margin" [color]="color"
+                                [checked]="checked" [(ngModel)]="courseVideoForm.status">
                                 Publish Status
                             </mat-slide-toggle>
-                        </div>
-                        <br>
-                        <div class="col-md-12 mt10">
-                            <mat-form-field formGroupName="courses" class="w100 mt10" appearance="fill">
-                                <mat-label>Choose an Category</mat-label>
-                                <mat-select name="courses" formControlName="cId" [(ngModel)]="course.courses.cId">
-                                    <mat-option *ngFor="let c of courses" [value]="c.cId">{{c.title}}</mat-option>
-                                </mat-select>
-                            </mat-form-field>
                         </div>
                         </div>
                         <div class="container text-center mt20">

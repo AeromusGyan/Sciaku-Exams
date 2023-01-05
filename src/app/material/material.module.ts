@@ -13,6 +13,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const MaterialComponents=[
   MatButtonModule,
@@ -27,6 +29,8 @@ const MaterialComponents=[
   MatSelectModule,
   MatRadioModule, 
   MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatDialogModule
 ];
 
 @NgModule({

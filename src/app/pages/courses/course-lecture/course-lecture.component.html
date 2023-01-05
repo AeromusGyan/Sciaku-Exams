@@ -97,7 +97,7 @@
                         </mat-card-header>
                         <mat-action-list>
                             <div matCardContent *ngFor="let c of courses;index as i">
-                                <button mat-list-item id="list{{i}}" class="list" (click)="onVideo(c.v_title,c.vId,i)"
+                                <button mat-list-item id="list{{i}}" class="list" (click)="onVideo(c.v_url,c.vId,i)"
                                     name="{{i}}">
                                     <p>Lecture {{i+1}} {{c.v_title}}</p>
                                 </button>

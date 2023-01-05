@@ -1,24 +1,19 @@
 <div class="bootstrap-wrapper">  
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 mt20">
-                <mat-card>
-                    <mat-list>
-                        <h1 class="text-left">All Categories</h1>
-                        <mat-list-item class="card" *ngFor="let cat of categories">
-                            <mat-icon mat-list-icon>folder</mat-icon>
-                            <mat-card-content>
-                                <div class="ml20">
-                                    <div mat-line>{{cat.title}}</div>
-                                    <div class="" mat-line>{{cat.description}}</div>
-                                </div>
-                            </mat-card-content>
-                            <mat-divider></mat-divider>
+            <div class="col-sm-12 ">
+                <div class="container text-center mt10 mb20">
+                    <button routerLink="/admin/add-category" mat-raised-button color="accent">Add Category</button>
+                </div>
+                <mat-card class=" p10">
+                    <mat-list>  
+                        <div mat-subheader><h1 class="text-left">All Categories</h1></div>
+                        <mat-list-item  *ngFor="let cat of categories">
+                          <mat-icon matListItemIcon>folder</mat-icon>
+                          <div matListItemTitle>{{cat.title}}</div>
+                          <div matListItemLine>{{cat.description}}</div>
                         </mat-list-item>
                     </mat-list>
-                    <div class="container text-center mt20">
-                        <button routerLink="/admin/add-category" mat-raised-button color="accent">Add Category</button>
-                    </div>
                 </mat-card>
             </div>
         </div>

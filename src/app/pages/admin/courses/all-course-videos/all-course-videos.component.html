@@ -4,36 +4,56 @@
     <div class="row">
         <div class="col-md-12">
             <div class="containner text-center">
-                <button mat-raised-button color="accent" routerLink="/admin/add-course-video">Add Course Video</button>
+                <a mat-raised-button color="accent" routerLink="/admin/add-course-video/{{qTitle}}/{{qId}}">Add Course Video</a>
             </div>
-            <!-- {{questions|json}} -->
-            <mat-card class="mt20 card" *ngFor="let q of questions; index as i">
+            <!-- {{courseVideos[0].imageFiles[0].url|json}} -->
+            <mat-card class="mt20" *ngFor="let c of courseVideos; index as i">
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Lecture {{i+1}}) {{c.v_title}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <p>{{c.thumbnail}}</p>
+                          <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <!-- <p>I'm visible because I am open</p> -->                  
                 <mat-card-content>
-                    <p>
-                        <strong>Lecture {{i+1}}) {{q.v_title}}</strong>
-                    </p>
-                    <p><span class="ml10 truncate" [innerHtml]="q.v_description"></span></p>
-                    <div class="container-fluid">
-
-                        <mat-divider></mat-divider>
-                        <div class="row">
-                            <div class="col-md-2 mt20">
-                                <button routerLink="/admin/update-course-video/{{q.vId}}/{{q.v_title}}"
-                                    mat-raised-button color="accent">Update Lecture</button>
-                            </div>
-                            <div class="col-md-2 mt20">
-                                Status
-                                <mat-slide-toggle class="example-margin" [color]="color"
-                                [checked]="checked" [(ngModel)]="q.status">
-                            </mat-slide-toggle>
-                            </div>
-                            <div class="col-md-2 offset-md-6 mt20 ">
-                                <button (click)="deleteQuestion(q.vId)" mat-fab color="warn"
-                                    style="margin-left: 30px;"><mat-icon>delete</mat-icon></button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img mat-card-image src="{{imgUrl + 'courses/' + c.thumbnail}}" alt="{{c.thumbnail}}">
+                        </div>
+                        <div class="col-md-8 ml20">
+                            <!-- <h1><strong>Lecture {{i+1}}) {{c.v_title}}</strong></h1> -->
+                            <p><span class="ml10" [innerHtml]="c.v_description"></span></p>
+                            <div class="container-fluid">
+                                <mat-divider></mat-divider>
+                                <div class="row">
+                                    <div class="col-md-3 mt20">
+                                        <a routerLink="/admin/update-course-video/{{c.v_url}}/{{c.vId}}"
+                                            mat-raised-button color="accent">Update Lecture</a>
+                                    </div>
+                                    <div class="col-md-2 mt20">
+                                        Status
+                                        <mat-slide-toggle (change)="onUpdateStatus(i)" class="example-margin" [color]="color"
+                                        [checked]="checked" [(ngModel)]="c.status">
+                                    </mat-slide-toggle>
+                                    </div>
+                                    <div class="col-md-2 offset-md-5 mt20 ">
+                                        <button (click)="deleteQuestion(c.vId)" mat-fab color="warn"
+                                            style="margin-left: 30px;"><mat-icon>delete</mat-icon></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </mat-card-content>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+
             </mat-card>
         </div>
     </div>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-add-question',
@@ -12,12 +13,26 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent implements OnInit {
-
-  public Editor = ClassicEditor;
+  Editor;
+  isBrowser = false;
+  // public Editor = ClassicEditor;
   qId: number | undefined;
   qTitle: any;
   disabled:boolean=true;
-  constructor(private _route:ActivatedRoute, private _category:CategoryService, private _snackbar:MatSnackBar) { }
+  constructor(private _route:ActivatedRoute, private _category:CategoryService, private _snackbar:MatSnackBar,
+    @Inject(PLATFORM_ID) private platformId: object
+    ) { 
+      this.isBrowser = isPlatformBrowser(this.platformId);
+      if (this.isBrowser) {
+         const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+         this.Editor = ClassicEditor;
+         this.Editor.defaultConfig = {
+            toolbar: {
+               items: ['yourListOfButtons'],
+            },
+         };
+      }
+    }
 
   questionForm = new UntypedFormGroup({
     content: new UntypedFormControl('',Validators.required),

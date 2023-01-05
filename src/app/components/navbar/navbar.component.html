@@ -1,75 +1,81 @@
-
-  <div class="container-fluid">
-    <div class="row">
-      <mat-toolbar color="primary" class="food-btn" id="tool">
-      <div class="col-md-7">
-        <mat-card-header>
-            <a routerLink="/" (click)="homePage()" ><img class="logo" src="./../../../assets/images/Sciaku.png" alt="Sciaku Logo" title="Sciaku Logo"></a>
-        </mat-card-header>
-      </div>
-      <div class="col-md-5 offset-md-0">
-        <div class="menu">
-          <a class="icon" (click)="myFunction()">
-            <mat-icon >menu</mat-icon>
-          </a>
-        </div>
-        <span class="example-spacer"></span>
-        <div class="row topnav" id="myTopnav">
-          <div class="col-md-2 button">
-            <a class="mr20" mat-raised-button routerLink="/">Home</a>
+<header>
+    <mat-toolbar color="primary" class="food-btn" id="tool">
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <div class="container-fluid">
+        <div class="row align-content">
+          <div class="col-md-6">
+            <mat-card-header>
+              <a routerLink="/" (click)="homePage()"><img class="logo" src="./../../../assets/images/Sciaku.png"
+                  alt="Sciaku Logo" title="Sciaku Logo"></a>
+            </mat-card-header>
           </div>
-          <!-- <div class="col-md-2 button">
+          <div class="col-md-6">
+            <div class="menu">
+              <a class="icon" (click)="myFunction()">
+                <mat-icon>menu</mat-icon>
+              </a>
+            </div>
+            <span class="example-spacer"></span>
+            <div class="row topnav" id="myTopnav">
+              <div class="col-md-2 button">
+                <a class="mr20" mat-raised-button routerLink="/">Home</a>
+              </div>
+              <!-- <div class="col-md-2 button">
             <button mat-raised-button color="accent">Feature</button>
           </div> -->
-          <div class="col-md-2 button">
-            <a class="mr20" mat-raised-button routerLink="/blogs">Blogs</a>
-          </div>
-          <div class="col-md-2 button">
-            <a class="mr20" mat-raised-button routerLink="/courses">Courses</a>
-          </div>
-          <div class="col-md-2 button">
-            <a class="mr20" mat-raised-button routerLink="/quizzes/quizzes/0">Quizzes</a>
-          </div>
-          <div *ngIf="isLoggedin" class="col-md-2 button">
-            <a class="mr20" class="mr20" mat-raised-button color="primary" class="example-icon" routerLink="/profile">
-                {{this.login.getUser().username}} </a>
-          </div>
-          <div *ngIf="!isLoggedin" class="col-md-2 button">
+              <div class="col-md-2 button">
+                <a class="mr20" mat-raised-button routerLink="/books">Books</a>
+              </div>
+              <div class="col-md-2 button">
+                <a class="mr20" mat-raised-button routerLink="/courses">Courses</a>
+              </div>
+              <div class="col-md-2 button">
+                <a class="mr20" mat-raised-button routerLink="/quizzes/quizzes/0">Quizzes</a>
+              </div>
+              <div *ngIf="isLoggedin" class="col-md-2 button">
+                <a class="mr20" class="mr20" mat-raised-button color="primary" class="example-icon"
+                  routerLink="/profile">
+                  {{this.login.getUser().username}} </a>
+              </div>
+              <div *ngIf="!isLoggedin" class="col-md-2 button">
                 <a class="mr20" routerLink="/login" mat-raised-button class="example-icon"
-                    aria-label="Example icon-button with login icon">
-                    <mat-icon>login</mat-icon>
-                    <span>Login</span>
+                  aria-label="Example icon-button with login icon">
+                  <mat-icon>login</mat-icon>
+                  <span>Login</span>
                 </a>
+              </div>
+              <div *ngIf="isLoggedin" class="col-md-2 button">
+                <a class="mr20" (click)="logout()" mat-raised-button class="example-icon"
+                  aria-label="Example icon-button with login icon">
+                  <mat-icon>logout</mat-icon>
+                  <span>Logout</span>
+                </a>
+              </div>
+              <div *ngIf="!isLoggedin" class="col-md-2 button">
+                <a class="mr20" class="mr20" routerLink="/signup" mat-raised-button class="example-icon"
+                  aria-label="Example icon-button with app_registration icon">
+                  <mat-icon>app_registration</mat-icon>
+                  <span>Signup</span>
+                </a>
+              </div>
+
+            </div>
           </div>
-          <div *ngIf="isLoggedin" class="col-md-2 button">
-            <a class="mr20" (click)="logout()" mat-raised-button class="example-icon"
-                aria-label="Example icon-button with login icon">
-                <mat-icon>logout</mat-icon>
-                <span>Logout</span>
-            </a>
-          </div>
-          <div *ngIf="!isLoggedin" class="col-md-2 button">
-            <a class="mr20" class="mr20" routerLink="/signup" mat-raised-button class="example-icon"
-                aria-label="Example icon-button with app_registration icon">
-                <mat-icon>app_registration</mat-icon>
-                <span>Signup</span>
-            </a>
-          </div>
-          
         </div>
       </div>
     </mat-toolbar>
-    </div>
-  </div>
 
 
 
 
 
-<!-- <mat-toolbar color="primary"> -->
-    <!-- <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <!-- <mat-toolbar color="primary"> -->
+  <!-- <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu_book</mat-icon>
     </a> -->
-    <!-- <span class="example-spacer"></span>
+  <!-- <span class="example-spacer"></span>
     </a>
 </mat-toolbar> -->
+</header>

@@ -14,6 +14,9 @@ export class UserGuard implements CanActivate {
       if (this.login.isLoggedIn() && this.login.getUserRole()=='NORMAL') {
         return true;
       }
+      // else if(this.login.isLoggedIn() && this.login.getUserRole()=='NORMAL'){
+      //   return true;
+      // }
       this.router.navigate(['login'])
     return false;
   }

@@ -1,14 +1,13 @@
-
 <mat-card class="p20" *ngIf="user">
     <!-- {{user|json}} -->
-    <h1>Your Profile Detail</h1>
+    <div *ngIf="editMode">
+        <h1>Your Profile Detail</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
-                <div class="container text-center">
-                    <input type="file" value="select" #selectFile (change)="onFileSelected($event)">
-                    <img class="profile-image" src="{{imgUrl}}/{{user.profile}}" alt="" accept="image/*">
-                    <h1 class="mt20">{{user.firstname}} {{user.lastname}}</h1>
+                <div class="container text-center image">
+                    <img class="profile-image" [src]="imageURL" alt="" accept="image/*">
+                    <h1 class="mt20 text-capitalize">{{user.firstname}} {{user.lastname}}</h1>
                 </div>
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
@@ -21,15 +20,15 @@
                                 <td>Userid</td>
                                 <td>{{user.id}}</td>
                             </tr>
-                            <tr *ngIf="user.email">
+                            <tr>
                                 <td>Email</td>
                                 <td>{{user.email}}</td>
                             </tr>
-                            <tr *ngIf="user.contact">
+                            <tr>
                                 <td>Phone Number</td>
                                 <td>{{user.contact}}</td>
                             </tr>
-                            <tr *ngIf="user.city">
+                            <tr>
                                 <td>Address</td>
                                 <td>{{user.city}}</td>
                             </tr>
@@ -39,7 +38,7 @@
                             </tr>
                             <tr>
                                 <td>Status</td>
-                                <td>{{user.status?"Active":"Inactive"}}</td>
+                                <td><span class="status">{{user.status?"Active":"Inactive"}}</span></td>
                             </tr>
                         </table>
                     </div>
@@ -48,9 +47,80 @@
         </div>
     </mat-card-content>
     <mat-card-actions>
-        <div class="text-center w100">   
-        <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
-        <button mat-raised-button color="accent" class="ml10">SHARE</button>
+        <div class="text-center w100">
+            <button mat-raised-button color="primary" (click)="onEdit(1)">Edit</button>
         </div>
-      </mat-card-actions>
+    </mat-card-actions>
+    </div>
+    <div *ngIf="!editMode" class="container">
+        <h1>Update Your Profile Details</h1>
+        <!-- {{member|json}}<br> -->
+        <!-- {{user|json}} -->
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Firstname</mat-label>
+                        <input type="firstname" name="firstname" [(ngModel)]="user.firstname" matInput
+                            placeholder="Enter here">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>firstname is required</mat-error>
+                    </mat-form-field></div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input type="lastname" name="lastname"[(ngModel)]="user.lastname" matInput
+                            placeholder="Enter here">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>Lastname is required</mat-error>
+                    </mat-form-field></div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" name="email" [(ngModel)]="user.email" matInput
+                            placeholder="Enter here">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>Email is required</mat-error>
+                    </mat-form-field></div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="contact" name="contact" [(ngModel)]="user.contact" matInput
+                            placeholder="Enter here">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>Phone Number is required</mat-error>
+                    </mat-form-field></div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <input type="city" name="city" [(ngModel)]="user.city" matInput
+                            placeholder="Enter here">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <mat-error>City is required</mat-error>
+                    </mat-form-field></div>
+                <div class="col-md-6">
+                    <div *ngIf="imgUpload">
+                        <label class="upload"><img [src]="imgUpload" alt=""></label>
+                        <button mat-button (click)="upload()" [disabled]="!selectedFiles">Upload</button>
+                    </div>
+                    <label for="image" class="upload"><img src="./../../../assets/images/sciaku-upload.png" alt=""><span>Browse image</span></label>
+                    <input id="image" multiple type="file" value="select" #selectFile (change)="onFileSelected($event)">
+                    <div *ngIf="currentFile" class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                            attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"
+                            [ngStyle]="{ width: progress + '%' }">
+                            {{ progress }}%
+                        </div>
+                    </div>
+                    <div class="alert alert-light" role="alert">{{ message }}</div>
+                </div>
+            </div>
+            </form>
+            <mat-card-actions>
+                <div class="text-center w100">
+                    <button mat-raised-button color="primary"(click)="updateUser()">Update</button>
+                    <a mat-raised-button color="accent" class="ml10" (click)="onEdit(0)" >Back to Profile</a>
+                </div>
+            </mat-card-actions>
+    </div>
 </mat-card>

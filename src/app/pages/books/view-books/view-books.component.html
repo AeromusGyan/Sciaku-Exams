@@ -1,0 +1,24 @@
+<div class="bootstrap-wrapper">  
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <mat-card class=" p10">
+                    <mat-list>  
+                        <div mat-subheader><h1 class="text-left">All Books</h1></div>
+                        <div class="row">
+                        </div>
+                        <mat-list-item  *ngFor="let book of books">
+                          <mat-icon matListItemIcon>picture_as_pdf</mat-icon>
+                          <div matListItemTitle>{{book.b_name}}</div>
+                          <div matListItemLine>
+                            <span>{{book.description}}</span>
+                            <a class="download" href="{{'https://sciaku.com/sciaku/assets/images/books/' + book.fileName}}"><i class="fa fa-download"></i> Download</a>
+                          </div>
+                          
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>  

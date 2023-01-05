@@ -10,11 +10,15 @@
                     <!-- <mat-spinner class="text-center"></mat-spinner> -->
                 </div>
                 <div class="col-md-12 offset-0 course" *ngIf="loader">
+                    <div class="top-img">
+                        <img mat-card-image src="{{imgUrl + 'courses/' + course[0].courses.thumbnail}}" alt="{{course[0].thumbnail}}">
+                    </div>
                     <h1 class="top">{{course[0].courses.title}}</h1>
                     <p class="text-muted">{{course[0].courses.description}}</p>
                     <div class="container">
                         <a mat-raised-button color="primary"
-                            routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{course[0].v_title}}/{{course[0].vId}}">Start Course</a>
+                            routerLink="/courses/course-lectures/{{course[0].v_url}}/{{course[0].courses.cId}}/{{course[0].vId}}">Start Course
+                        </a>
                     </div>
                 </div>
             </div>
@@ -23,24 +27,39 @@
             <div class="col-md-12">
                 <h1 class="text-center top">Course Videos is here</h1>
             </div>
-            <mat-card class="example-card" *ngFor="let c of course;index as i">
-                <div class="row" >
-                    <div class="col-md-3 left">
-                        <img mat-card-image src="{{imgUrl}}/{{c.thumbnail}}" alt="{{c.thumbnail}}">
+            <mat-card class="example-card">
+                <mat-accordion style="margin-bottom:10px" *ngFor="let c of course; index as i">
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Lecture:- {{i+1}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} -->
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <!-- <p>I'm visible because I am open</p> -->
+                      <div class="row" >
+                        <div class="col-md-3 left">
+                            <img mat-card-image src="{{imgUrl + 'courses/' + c.thumbnail}}" alt="{{c.thumbnail}}">
+                        </div>
+                        <div class="col-md-9">
+                                <mat-card-header>
+                                    <mat-card-title class="title">#{{i+1}} {{c.v_title}}</mat-card-title>
+                                </mat-card-header>
+                                <p class="truncate" [innerHTML]="c.v_description"></p>
+                                <mat-card-actions>
+                                    <a mat-raised-button color="primary" routerLink="/courses/course-lectures/{{c.v_url}}/{{c.courses.cId}}/{{c.vId}}">Watch
+                                        Video</a>
+                                    <!-- <button mat-button color="accent">LIKE</button>
+                                    <button mat-button color="primary">SHARE</button> -->
+                                </mat-card-actions>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                            <mat-card-header>
-                                <mat-card-title class="title">#{{i+1}} {{c.v_title}}</mat-card-title>
-                            </mat-card-header>
-                            <p class="truncate" [innerHTML]="c.v_description"></p>
-                            <mat-card-actions>
-                                <a mat-raised-button color="warn" routerLink="/courses/course-lectures/{{course[0].courses.cId}}/{{c.v_title}}/{{c.vId}}">Watch
-                                    Video</a>
-                                <button mat-button color="accent">LIKE</button>
-                                <button mat-button color="primary">SHARE</button>
-                            </mat-card-actions>
-                    </div>
-                </div></mat-card>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                  
+                </mat-card>
         </mat-card>
     </div>
 </div>

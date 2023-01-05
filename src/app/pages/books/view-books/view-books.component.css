@@ -1,0 +1,19 @@
+.download{
+    background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 650px;
+  text-decoration: none;
+  align-items: center;
+}
+.download:hover {
+    background-color: RoyalBlue;
+  }
+  @media screen and (max-width: 600px){
+    .download{
+        margin: 10px;
+    }
+  }

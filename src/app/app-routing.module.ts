@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './auth/admin.guard';
 import { UserGuard } from './auth/user.guard';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TermsConditionComponent } from './components/terms-condition/terms-condition.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
-import { AddCoursesComponent } from './pages/admin/add-courses/add-courses.component';
+import { AddCoursesComponent } from './pages/admin/courses/add-courses/add-courses.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { AddCourseVideosComponent } from './pages/admin/courses/add-course-videos/add-course-videos.component';
@@ -28,6 +31,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ResumeComponent } from './pages/resume/resume.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AttemptedComponent } from './pages/user/attempted/attempted.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
@@ -35,56 +39,84 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
+// import { AddCourseLecturesComponent } from './pages/admin/courses/add-course-lectures/add-course-lectures.component';
+// import { AllCourseLecturesComponent } from './pages/admin/courses/all-course-lectures/all-course-lectures.component';
+import { EditProfileComponent } from './pages/profile/edit-profile/edit-profile.component';
+import { ImagesComponent } from './components/testing/images/images.component';
+import { ViewBooksComponent } from './pages/books/view-books/view-books.component';
+import { AddBooksComponent } from './pages/admin/books/add-books/add-books.component';
+import { AllBooksComponent } from './pages/admin/books/all-books/all-books.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent, pathMatch:'full'},
-  {path:'signup', component:SignupComponent, pathMatch:'full'},
-  {path:'login', component:LoginComponent, pathMatch:'full'},
-  {path:'forgot', component:ForgotPasswordComponent, pathMatch:'full'},
-  {path:'privacy-policy', component:PrivacyPolicyComponent, pathMatch:'full'},
-  {path:'courses', component:CoursesComponent, pathMatch:'full'},
-  {path:'courses/course-details/:title/:cid', component:CourseDetailComponent, pathMatch:'full'},
-  {path:'courses/course-lectures/:cid/:title/:id', component:CourseLectureComponent, canActivate:[UserGuard]},
-  {path:'profile', component:ProfileComponent, canActivate:[UserGuard]},
-  
-  {path:'admin', component:DashboardComponent,canActivate:[AdminGuard],
-  children:[
-    {path:'', component:WelcomeComponent},
-    {path:'profile', component:ProfileComponent},
-    {path:'categories', component:ViewCategoriesComponent},
-    {path:'add-category', component:AddCategoryComponent},
-    {path:'quizzes', component:ViewQuizzesComponent},
-    {path:'add-quiz', component:AddQuizComponent},
-    {path:'quiz/:qid',component:UpdateQuizComponent},
-    {path:'questions/:id/:title', component:ViewQuizQuestionsComponent},
-    {path:'add-question/:id/:title', component:AddQuestionComponent},
-    {path:'update-question/:id/:title', component:UpdateQuestionComponent},
-    {path:'users-detail', component:UsersDetailComponent},
-    {path:'add-courses', component:AddCoursesComponent},
-    {path:'add-course-video', component:AddCourseVideosComponent},
-    {path:'all-courses', component:AllCoursesComponent},
-    {path:'course-lectures/:id/:title', component:AllCourseVideosComponent},
-    {path:'update-course-video/:id/:title', component:UpdateCourseVideoComponent},
-    {path:'update-courses/:cid',component:UpdateCoursesComponent}
-  ]},
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'forgot', component: ForgotPasswordComponent, pathMatch: 'full' },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent, pathMatch: 'full' },
+  { path: 'courses', component: CoursesComponent, pathMatch: 'full' },
+  { path: 'courses/course-details/:url/:cid', component: CourseDetailComponent, pathMatch: 'full' },
+  { path: 'image', component: ImagesComponent, data: { 'title': 'Images upload testing' } },
+  { path: 'courses/course-lectures/:title/:cid/:id', component: CourseLectureComponent, canActivate: [UserGuard] },
+  {path: 'books', component:ViewBooksComponent, pathMatch:'full'},
+  {
+    path: 'profile', component: ProfileComponent, canActivate: [UserGuard],
+    children: [
+      { path: 'edit', component: EditProfileComponent }
+    ]
+  },
+  { path: 'myresume', component: ResumeComponent, pathMatch: 'full' },
+  { path: 'about-us', component: AboutComponent, pathMatch: 'full' },
+  { path: 'contact-us', component: ContactComponent, pathMatch: 'full' },
+  { path: 'terms-conditions', component: TermsConditionComponent, pathMatch: 'full' },
 
-  {path:'quizzes', component:UserDashboardComponent, canActivate:[UserGuard],
-  children:[
-    {path:'', component:UserWelcomeComponent},
-    {path:':title/:catId', component:LoadQuizComponent},
-    {path:'instructins/:quiz/:qid', component:InstructionsComponent},
-    {path:'pan/results/attempted', component:AttemptedComponent}
-    
-    // {path:'profile', component:UserProfileComponent},
-  ]
-},
-  {path:'quiz/start/:qtitle/:qid', component:QuizStartComponent, canActivate:[UserGuard]},
-  {path:'**', component:Page404Component, data:{'title':'404 page'}},
+  {
+    path: 'admin', component: DashboardComponent, canActivate: [AdminGuard],
+    children: [
+      { path: '', component: WelcomeComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'categories', component: ViewCategoriesComponent },
+      { path: 'add-category', component: AddCategoryComponent },
+      { path: 'quizzes', component: ViewQuizzesComponent },
+      { path: 'add-quiz', component: AddQuizComponent },
+      { path: 'quiz/:qid', component: UpdateQuizComponent },
+      { path: 'questions/:id/:title', component: ViewQuizQuestionsComponent },
+      { path: 'add-question/:id/:title', component: AddQuestionComponent },
+      { path: 'update-question/:id/:title', component: UpdateQuestionComponent },
+      { path: 'users-detail', component: UsersDetailComponent },
+      { path: 'add-courses', component: AddCoursesComponent },
+      { path: 'all-courses', component: AllCoursesComponent },
+      // {path:'add-course-lectures/:id/:title', component:AddCourseLecturesComponent},
+      // {path:'all-course-lectures/:id/:title', component:AllCourseLecturesComponent},
+      { path: 'add-course-video/:title/:id', component: AddCourseVideosComponent },
+      { path: 'course-lectures/:title/:id', component: AllCourseVideosComponent },
+      { path: 'update-course-video/:title/:id', component: UpdateCourseVideoComponent },
+      { path: 'update-courses/:cid', component: UpdateCoursesComponent },
+      { path:'add-books', component:AddBooksComponent},
+      { path:'all-books', component:AllBooksComponent},
+
+    ]
+  },
+
+  {
+    path: 'quizzes', component: UserDashboardComponent, canActivate: [UserGuard],
+    children: [
+      { path: '', component: UserWelcomeComponent },
+      { path: ':title/:catId', component: LoadQuizComponent },
+      { path: 'instructins/:quiz/:qid', component: InstructionsComponent },
+      { path: 'pan/results/attempted', component: AttemptedComponent }
+
+      // {path:'profile', component:UserProfileComponent},
+    ]
+  },
+  { path: 'quiz/start/:qtitle/:qid', component: QuizStartComponent, canActivate: [UserGuard] },
+  { path: '**', component: Page404Component, data: { 'title': '404 page' } },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

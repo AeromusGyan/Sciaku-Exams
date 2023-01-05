@@ -4,8 +4,10 @@
 <!-- <div ngxUiLoaderBlurred [blur]="10"> -->
     <!-- This page content will be blurred/frosted when foreground loader is showed -->
 <app-navbar></app-navbar>
-<div style="min-height: 550px;">
-  <router-outlet (activate)="onActivate($event)"></router-outlet>
-</div>
+<main>
+  <div style="min-height: 550px;">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</main>
 <app-footer></app-footer>
   <!-- </div> -->

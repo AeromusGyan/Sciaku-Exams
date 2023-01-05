@@ -1,12 +1,14 @@
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { LoginService } from './login.service';
+// import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
+  formData!: FormData;
 
   constructor(private http:HttpClient) { }
   private baseUrl:string = environment.baseUrl;
@@ -32,10 +34,30 @@ export class MemberService {
     return this.http.post(endpoint,formData);
   }
 
-  update(userData:any){
-    return this.http.put(`${this.baseUrl}/user/update/`,userData);
+  updateProfile(userData:any){
+    return this.http.put(`${this.baseUrl}/user/update`,userData);
+  }
+  deleteUser(id:number){
+    return this.http.delete(`${this.baseUrl}/user/`+ id);
   }
 
+  imageUpload(data:any, file:File) {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('data', JSON.stringify(data));
+    const req = new HttpRequest('POST', `${this.baseUrl}/file/upload`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req);
+  }
+  // getImageFiles(): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/file/files`);
+  // }
+
+
+
+  
   // update(formData: FormData){
   //   // console.log(file);
   //   // console.log(member);

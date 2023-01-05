@@ -9,7 +9,7 @@
                     </div>
                     <h1 class="text-center text-uppercase">Register here</h1>
                     <!-- {{memberForm.value|json}} -->
-                    <form [formGroup]="memberForm" (ngSubmit)="Submit()">
+                    <form [formGroup]="memberForm">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Username</mat-label>
                             <input type="username" name="username" formControlName="username" matInput
@@ -62,7 +62,7 @@
                             <!-- [disabled]="!memberForm.valid" -->
                             <div class="row">
                                 <div class="col-md-12 ">
-                                    <a type="submit" mat-raised-button color="primary">Register</a>
+                                    <a type="submit" mat-raised-button color="primary" (click)="Submit()">Register</a>
                                 </div>
                                 <div class="col-md-12">
                                     <a type="reset" mat-raised-button routerLink="/login">Login</a>

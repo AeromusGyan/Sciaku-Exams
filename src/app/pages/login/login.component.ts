@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 
@@ -10,17 +12,31 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-
+export class LoginComponent implements OnInit{
+  user:any =  SocialUser;
+  loggedIn: boolean = false;
+  
   hide = true;
   durationInSeconds: any = 3;
-  constructor(private login: LoginService, private _snackBar: MatSnackBar, private router: Router) { }
+  constructor(private login: LoginService,
+    private _snackBar: MatSnackBar, 
+    private router: Router,
+    private authService: SocialAuthService,
+    private location: Location
+    ) { }
+
   memberForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
 
   ngOnInit(): void {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      console.log(this.user);
+      
+      this.loggedIn = (user != null);
+    });
   }
 
   Submit() {
@@ -69,9 +85,10 @@ export class LoginComponent {
               }
               else if (this.login.getUserRole() == "NORMAL") {
                 // User dashboard
-                Swal.fire('You are Logged in !!', 'success');
+                Swal.fire('You are Logged in !!', 'User role is ' + this.login.getUserRole(), 'success');
                 setTimeout(() => {
-                  window.location.href='/';
+                  this.location.back();
+                  // window.location.href='/';
                   // this.router.navigate(["courses"]);
                 }, 1000);
               }
@@ -87,5 +104,27 @@ export class LoginComponent {
         }
       )
     }
+  }
+
+
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+      (res)=>{
+        console.log(res);
+        
+      }
+    );
+  }
+
+  // signInWithFB(): void {
+  //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  // }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
+  
+  refreshToken(): void {
+    this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
   }
 }

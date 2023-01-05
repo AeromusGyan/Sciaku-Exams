@@ -1,6 +1,9 @@
 
 <div class="bootstrap-wrapper">
     <mat-card-title class="mt10 mr20 ml20">All Quizzes</mat-card-title>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-quiz" mat-flat-button color="accent">Add Quiz</button>
+    </div>
     <mat-card class="mt10 card" *ngFor="let quiz of quizzes" appMaterialElevation defaultElevation="variableHeight" raisedElevation="16">
         <mat-card-header>
             <div class="example-header-image" mat-card-avatar></div>
@@ -37,8 +40,5 @@
             </div>
         </mat-card-actions>
     </mat-card>
-    <div class="container text-center mt20">
-        <button routerLink="/admin/add-quiz" mat-flat-button color="accent">Add Quiz</button>
-    </div>
 </div>
 <!-- {{quizzes|json}} -->

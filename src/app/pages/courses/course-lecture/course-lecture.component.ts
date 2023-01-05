@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -31,12 +32,23 @@ export class CourseLectureComponent {
   questions: any;
   cid: any;
 
-  constructor(private _courses: CoursesService, private _snackbar: MatSnackBar, private _route: ActivatedRoute, private _router: Router, private _meta:Meta, private _title:Title) { }
+  constructor(private _courses: CoursesService, 
+    private _snackbar: MatSnackBar, 
+    private _route: ActivatedRoute,
+     private _router: Router, 
+     private _meta:Meta, 
+     private _title:Title,
+     private shareService:MetaService
+     ) { }
 
   ngOnInit(): void {
     this.vid = this._route.snapshot.params['id'];
     this.cid = this._route.snapshot.params['cid'];
     if (window.innerWidth < 600) {
+      this.width = window.innerWidth - 70;
+      this.height = window.innerHeight - 430;
+    }
+    else if (window.innerWidth < 600) {
       this.width = window.innerWidth - 70;
       this.height = window.innerHeight - 430;
     }
@@ -65,7 +77,6 @@ export class CourseLectureComponent {
         else{
           this.loader = false;
         }
-        
         this.spinner = true;
       },
       (error: any) => {
@@ -78,16 +89,29 @@ export class CourseLectureComponent {
     this._courses.getCourseVideoById(vid).subscribe(
       (data: any) => {
         this.course = data;
-        this.thumb = this.imgUrl +'/'+ this.course.thumbnail;
 
+        this.shareService.setFacebookTags(
+          window.document.location.href,
+          this.course.v_title,
+          this.course.courses.description,
+          this.course.thumbnail);
+          console.log(window.document.location.href,
+            this.course.v_title,
+            this.course.courses.description,
+            this.course.thumbnail);
+          
+        // this.thumb = this.imgUrl + this.course.thumbnail;
         this._title.setTitle(this.course.v_title);
-        this._meta.updateTag({property:'og:title', content: this.course.v_title});
-        this._meta.updateTag({name:'description',content: this.course.courses.description});
-        this._meta.updateTag({property:'og:description',content: this.course.courses.description});
-        this._meta.updateTag({name:'image', content: this.thumb});     
-        this._meta.updateTag({property:'og:image', content: this.thumb});      
-        this._meta.updateTag({property:'og:url', content: window.document.location.href});
-        this._meta.updateTag({name:'keywords',content:'top free courses, courses'});  
+        // this._meta.updateTag({property:'og:title', content: this.course.v_title});
+        // this._meta.updateTag({name:'description',content: this.course.courses.description});
+        // this._meta.updateTag({property:'og:description',content: this.course.courses.description});
+        // this._meta.updateTag({property:'og:image', content: this.thumb});  
+        // this._meta.updateTag({property:'og:image:secure_url', content: this.thumb});
+        // this._meta.updateTag({property:'og:image:type', content: "image/jpeg/png"});
+        // this._meta.updateTag({property:'og:image:width', content: "400"});
+        // this._meta.updateTag({property:'og:image:height', content:"300"});
+        // this._meta.updateTag({property:'og:url', content: window.document.location.href});
+        // this._meta.updateTag({name:'keywords',content:'top free courses, courses'});  
 
         this.videoId = this.course.url;
         this.spinner = true;
@@ -98,7 +122,7 @@ export class CourseLectureComponent {
 
   }
   onVideo(title: any, vId: any, index: any) {
-    this._router.navigate(['/courses/course-lectures/'+ this.cid + '/' + title + "/" + vId]);
+    this._router.navigate(['/courses/course-lectures/' + title + "/" + this.cid + '/' + vId]);
     this.getCourseById(vId);
     // console.log(vId);
     // this.onActive(index);  

@@ -1,15 +1,12 @@
-import { FileHandle } from "./file-handle.model";
-
-export interface Member{
-    id: number,
-    username: string,
-    firstname:string,
-    lastname:string,
-    email:string,
-    password:string,
-    profile:string,
-    contact:string,
-    city:string,
-    status: boolean,
-    enabled: boolean 
+export class Member{
+    constructor(
+        public id: number,
+        public firstname:string,
+        public lastname:string,
+        public email:string,
+        public profile:string,
+        public contact:string,
+        public city:string,
+        public status: boolean
+    ){}
 }

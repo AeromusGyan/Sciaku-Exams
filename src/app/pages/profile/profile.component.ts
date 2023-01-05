@@ -1,12 +1,13 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DomSanitizer } from '@angular/platform-browser';
-import { FileHandle } from 'src/app/model/file-handle.model';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { Member } from 'src/app/model/member.model';
 import { LoginService } from 'src/app/services/login.service';
 import { MemberService } from 'src/app/services/member.service';
 import { environment } from 'src/environments/environment';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-profile',
@@ -15,37 +16,58 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private login:LoginService, private snackbar:MatSnackBar, private sanitizer: DomSanitizer, private _member:MemberService) { }
+  constructor(private http: HttpClient,
+    private login: LoginService,
+    private snackbar: MatSnackBar,
+    private sanitizer: DomSanitizer,
+    private _member: MemberService
+  ) { }
 
-  user:any ={"authorities":[{authority:""}]};
-
-  imgUrl:any=environment.imgUrl;
-
-  member: any = {
-    id: 0,
-    username: '',
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    profile: '',
-    contact: '',
-    city: '',
-    status: true
-  }
-
-  files:any;
+  imageData: any = { url: '' };
+  editMode: boolean = true;
+  Uurl: string = uuid.v4();
+  user: any = { authorities: [{ authority: '' }] };
+  imgUrl: any = environment.imgUrl;
+  baseUrl:any = environment.baseUrl;
+  member = new Member(0, '', '', '', '', '', '', true);
+  selectedFiles: any = FileList;
+  currentFile: any = File;
+  progress = 0;
+  message = '';
+  URL: string = '';
+  image!: Blob;
+  imageURL!: SafeUrl;
+  imgUpload: string = "";
 
   ngOnInit(): void {
     this.fetchUser();
   }
 
-  fetchUser(){
+  onEdit(id: any) {
+    if (id == 1) { this.editMode = false; }
+    else { this.editMode = true; }
+  }
+
+  loadImage(): Observable<Blob> {
+    return this.http.get(this.URL, {
+      responseType: "blob"
+    });
+  }
+
+  fetchUser() {
     this.login.getCurrentUser().subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.user = data;
+        this.URL = this.baseUrl +"/file/files/" + this.user.profile;
+        // this.URL = "http://localhost:8080/file/files/" + this.user.profile;
+        this.loadImage().subscribe(i => {
+          this.image = i;
+          this.imageURL = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(this.image));
+        })
       },
-      (error:HttpErrorResponse)=>{
+      (error: HttpErrorResponse) => {
+        console.log(error);
+        
         this.snackbar.open('Server Error !!', 'Close', {
           duration: 5000,
           verticalPosition: 'bottom',
@@ -54,54 +76,77 @@ export class ProfileComponent implements OnInit {
       }
     )
   }
-  onFileSelected(event:any){
-    // this.user.profile 
-    if(event.target.files){
-      this.files = event.target.files[0];
-      // console.log(event.target.files[0]);
-      
-      // const filehandle :any = {
-      //   file : files,
-      //   url: this.sanitizer.bypassSecurityTrustUrl(
-      //     window.URL.createObjectURL(files)
-      //   )
-      // }
-      // this.member.userImages.push(filehandle);
+
+  onFileSelected(event: any) {
+    this.selectedFiles = event.target.files;
+    if (this.selectedFiles) {
+      var reader = new FileReader();
+      reader.readAsDataURL(this.selectedFiles[0]);
+      reader.onload = (e: any) => {
+        this.imgUpload = e.target.result;
+      }
     }
   }
-  updateUser(){
-    this.member.id = this.user.id;
-        this.member.username = this.user.username;
-        this.member.firstname = this.user.firstname;
-        this.member.lastname = this.user.lastname;
-        this.member.email = this.user.email;
-        // this.member.password = this.user.password;
-        this.member.contact = this.user.contact;
-        this.member.status = this.user.status;
-        this.member.city = this.user.city;
-        this.member.status = this.user.status;
-        this.member.profile = this.files.name
-    // console.log(this.member);
-    // const memberFormData = this.prepareFormData(this.member);
-    this._member.postFile("profile",this.files).subscribe();
 
-    this._member.updatePassword(this.member).subscribe();
+  upload() {
+    this.progress = 0;
+    this.imageData.url = this.Uurl;
+    this.currentFile = this.selectedFiles.item(0);
+
+    if (this.currentFile.size <= 1097152) {
+      this._member.imageUpload(this.imageData, this.currentFile).subscribe(
+        (event: any) => {
+          if (event.type === HttpEventType.UploadProgress) {
+            this.progress = Math.round(100 * event.loaded / event.total);
+          }
+          if (event instanceof HttpResponse) {
+            this.message = event.body.message;
+          }
+        },
+        err => {
+          this.progress = 0;
+          this.message = 'Could not upload the file!';
+          this.currentFile = undefined;
+        }
+      );
+      this.selectedFiles = undefined;
+    }
+    else {
+      this.snackbar.open("Please Upload the Image Under 1MB", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        horizontalPosition: 'center',
+      });
+    }
   }
 
-  // prepareFormData(member:any):FormData{
-  //   const formData = new FormData();
-  //   formData.append(
-  //     'member',
-  //     new Blob([JSON.stringify(member)],{type: 'application/json'})
-  //   );
-  //   for(var i = 0; member.userImages.length; i++){
-  //     formData.append(
-  //       'image',
-  //       this.member.userImages[0].file,
-  //       this.member.userImages[0].file.name
-  //     );
-  //     console.log("file: " + this.member.userImages[i].file);
-  //   }
-  //   return formData;
-  // }
+  updateUser() {
+    this.member.id = this.user.id;
+    this.member.firstname = this.user.firstname;
+    this.member.lastname = this.user.lastname;
+    this.member.email = this.user.email;
+    this.member.contact = this.user.contact;
+    this.member.city = this.user.city;
+    this.member.status = this.user.status;
+    this.member.profile = this.Uurl;
+    this._member.updateProfile(this.member).subscribe(
+      (res) => {
+        this.snackbar.open("Profile is updated succesfully!!", 'Close', {
+          duration: 5000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center',
+        }
+        );
+        this.editMode = true;
+        this.fetchUser();
+      },
+      (err) => {
+        this.snackbar.open("Profile is not updated!!", 'Close', {
+          duration: 5000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center',
+        });
+      }
+    );
+  }
 }

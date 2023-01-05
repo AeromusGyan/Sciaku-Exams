@@ -14,6 +14,12 @@
   height: 10rem;
   margin-bottom: 10px;
 }
+.top-img{
+  max-height: 25rem;
+}
+.top-img img{
+  height: 20rem;
+}
 .course{
   padding: 20px;
   margin-bottom: 50px;
@@ -30,6 +36,11 @@
   font-size: 30px;
   font-weight: bold;
   font-family: sans-sarif;
+}
+
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    margin-right: 0px;
 }
 @media screen and (max-width: 600px) {
   .course{

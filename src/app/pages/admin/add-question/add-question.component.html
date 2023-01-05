@@ -15,7 +15,16 @@
                     <form class="mt20" [formGroup]="questionForm" (ngSubmit)="addQuestion()">
                         <div class="row">
                         <div class="col-md-12">
-                            <ckeditor autofocus tagName="textarea" [editor]="Editor" data="<p>Write your question here !</p>" name="content"  formControlName="content" rows="5"></ckeditor>
+                            <ckeditor 
+                            autofocus 
+                            *mIfBrowser
+                            tagName="textarea" 
+                            [editor]="Editor" 
+                            data="<p>Write your question here !</p>" 
+                            name="content"  
+                            formControlName="content" 
+                            rows="5">
+                        </ckeditor>
 
                             <!-- <mat-form-field class="w100" appearance="fill">
                                 <mat-label>Question Content</mat-label>
